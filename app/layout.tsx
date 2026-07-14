@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/providers/SmoothScroll";
+import AnimationProvider from "@/components/providers/AnimationProvider";
+import ScrollProvider from "@/components/providers/ScrollProvider";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -20,8 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} scroll-smooth`}>
       <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
-        {children}
-      </body>
+  <AnimationProvider />
+  <ScrollProvider />
+
+  <SmoothScroll>
+    {children}
+  </SmoothScroll>
+</body>
     </html>
   );
 }

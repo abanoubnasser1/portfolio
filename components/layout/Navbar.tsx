@@ -1,22 +1,24 @@
 export default function Navbar() {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full">
-      <div className="mx-auto flex max-w-[1700px] items-center justify-between px-12 py-10 md:px-20">
-        <div className="font-medium">
-          Abanoub Nasser
+    <header className="fixed left-0 top-8 z-50 w-full ">
+      <div className=" flex max-w-auto items-center justify-between px-6 py-6 md:px-20 md:py-10">
+        <div className="font-light text-zinc-500 transition-colors duration-300 hover:text-white">
+          <a href="#" className="transition hover:text-white">
+            ABANOUB NASSER
+          </a>
         </div>
 
         <nav className="flex gap-12 text-sm text-zinc-500">
           <a href="#work" className="transition hover:text-white">
-            Work
+            WORK
           </a>
 
           <a href="#about" className="transition hover:text-white">
-            About
+            ABOUT
           </a>
 
           <a href="#contact" className="transition hover:text-white">
-            Contact
+            CONTACT
           </a>
         </nav>
       </div>

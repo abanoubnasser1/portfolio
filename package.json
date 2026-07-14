@@ -18,8 +18,10 @@
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-icons": "^5.7.0",
     "react-intersection-observer": "^10.0.3",
     "react-wrap-balancer": "^1.1.1",
+    "split-type": "^0.3.4",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
