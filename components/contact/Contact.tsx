@@ -10,8 +10,7 @@ export default function Contact() {
       id="contact"
       className="border-t border-zinc-800"
     >
-      <div className="scroll-section w-full">
-        <div className="scroll-content">
+     
           <Container>
             <div className="grid grid-cols-12 gap-10">
               <div className="col-span-12 lg:col-span-3">
@@ -43,8 +42,7 @@ export default function Contact() {
               </div>
             </div>
           </Container>
-        </div>
-      </div>
+       
     </Section>
   );
 }

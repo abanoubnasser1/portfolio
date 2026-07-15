@@ -1,128 +1,66 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-interface Project {
-  index: string;
-  tags: string[];
-  title: string;
-  href: string;
-  image: string;
-}
-
-const projects: Project[] = [
-  {
-    index: "01",
-    tags: ["Branding", "Packaging"],
-    title: "Al Sultan Omar - Premium Honey",
-    href: "https://www.behance.net/gallery/251293575/AL-SULTAN-OMAR-PREMIUM-HONEY",
-    image: "/projects/honey.jpg",
-  },
-  {
-    index: "02",
-    tags: ["Branding", "Identity"],
-    title: "Q West",
-    href: "https://www.behance.net/gallery/207691419/Q-WEST",
-    image: "/projects/qwest.jpg",
-  },
-  {
-    index: "03",
-    tags: ["Branding", "Digital"],
-    title: "Foam – Car Wash & Detailing",
-    href: "https://www.behance.net/gallery/220912065/Foam-Smart-Car-Wash-Detailing-Experience",
-    image: "/projects/foam.jpg",
-  },
-  {
-    index: "04",
-    tags: ["Branding", "Tech"],
-    title: "Corelink Technologies",
-    href: "https://www.behance.net/gallery/236718675/Corelink-Technologies",
-    image: "/projects/corelink.jpg",
-  },
-];
+import { motion } from "framer-motion";
+import { projects } from "@/lib/projects";
 
 export default function Projects() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
     <section id="work" className="mx-auto w-full max-w-[1700px] px-12 py-32 md:px-20">
       <p className="mb-16 uppercase tracking-[0.35em] text-zinc-500">
         Selected Work
       </p>
 
-      <div className="relative border-t border-white/10">
-        {projects.map((project, i) => {
-          const isActive = activeIndex === i;
-
-          return (
-            <Link
-              key={project.index}
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => setActiveIndex(i)}
-              onMouseLeave={() => setActiveIndex(null)}
-              className="group relative flex flex-col gap-4 border-b border-white/10 py-8 transition-colors md:flex-row md:items-center md:justify-between md:py-10"
-            >
-              <div className="flex items-center gap-6 md:gap-10">
-                <span
-                  className={`text-sm tabular-nums transition-colors duration-300 ${
-                    isActive ? "text-white" : "text-zinc-600"
-                  }`}
-                >
-                  {project.index}
-                </span>
-
-                <h3
-                  className={`text-3xl font-medium leading-none tracking-tight transition-colors duration-300 md:text-6xl ${
-                    isActive ? "text-white" : "text-zinc-500"
-                  }`}
-                >
-                  {project.title}
-                </h3>
-              </div>
-
-              <div className="flex items-center gap-8 pl-11 md:pl-0">
-                <div className="flex gap-3">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-widest text-zinc-500"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <span
-                  className={`text-2xl transition-transform duration-300 ${
-                    isActive ? "translate-x-1 text-white" : "text-zinc-600"
-                  }`}
-                >
-                  &rarr;
-                </span>
-              </div>
-
-              {/* Floating preview image that follows hover */}
-              <div
-                className={`pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg transition-all duration-300 md:block ${
-                  isActive ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                }`}
-                style={{ width: 320, height: 220 }}
-              >
+      <div className="grid grid-cols-1 gap-x-8 gap-y-20 md:grid-cols-2">
+        {projects.map((project, i) => (
+          <motion.div
+            key={project.slug}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (i % 2) * 0.1 }}
+          >
+            <Link href={`/work/${project.slug}`} className="group block">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-zinc-900">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
-                  sizes="320px"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                  sizes="(min-width: 768px) 45vw, 90vw"
                 />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <span className="absolute left-5 top-5 text-sm tabular-nums text-white/70">
+                  {project.index}
+                </span>
+
+                <span className="absolute right-5 top-5 flex h-10 w-10 -translate-y-2 items-center justify-center rounded-full bg-white text-black opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  ↗
+                </span>
+              </div>
+
+              <div className="mt-6 flex items-start justify-between gap-4">
+                <h3 className="text-2xl font-medium tracking-tight text-white transition-colors duration-300 md:text-3xl">
+                  {project.title}
+                </h3>
+              </div>
+
+              <div className="mt-3 flex gap-3">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-white/10 px-4 py-1.5 text-xs uppercase tracking-widest text-zinc-500"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </Link>
-          );
-        })}
+          </motion.div>
+        ))}
       </div>
     </section>
   );

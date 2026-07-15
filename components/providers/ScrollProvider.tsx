@@ -23,9 +23,9 @@ export default function ScrollProvider() {
           scale: 1,
         },
         {
-          opacity: 0.0,
+          opacity: 1,
           filter: "blur(0px)",
-          scale: 0.9,
+          scale: 1,
           ease: "none",
           scrollTrigger: {
             trigger: section,
