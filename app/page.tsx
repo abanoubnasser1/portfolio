@@ -10,6 +10,7 @@ export default function Home() {
     <main>
       <Hero />
       <Navbar />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
 
       <section id="about" className="mx-auto w-full flex justify-center max-w-[1700px] py-42 md:px-30">
         <ScrollBlurText
