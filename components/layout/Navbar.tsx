@@ -8,8 +8,7 @@ export default function Navbar() {
           maskImage: "linear-gradient(to bottom, black 0%, black 30%, transparent 100%)",
           WebkitMaskImage:
             "linear-gradient(to bottom, black 0%, black 40%, transparent 100%)",
-                      background:
-            "linear-gradient(to bottom, rgba(9,9,9,0.2) 0%, rgba(9,9,9,0.0) 100%, transparent 100%)",
+                     
 
         }}
       />
