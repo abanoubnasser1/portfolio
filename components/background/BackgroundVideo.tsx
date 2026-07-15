@@ -11,7 +11,7 @@ export default function BackgroundVideo() {
     offset: ["start start", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
 
   return (
     <div ref={containerRef} className="fixed inset-0 -z-10 overflow-hidden">

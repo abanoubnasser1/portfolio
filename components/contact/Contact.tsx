@@ -42,7 +42,9 @@ export default function Contact() {
               </div>
             </div>
           </Container>
-       
+ 
+
     </Section>
+   
   );
 }

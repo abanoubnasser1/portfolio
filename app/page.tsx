@@ -26,6 +26,13 @@ export default function Home() {
       <About />
       <Projects />
       <Contact />
+      <section id="back to top" className="mx-auto w-full flex justify-center max-w-[1700px] py-10 ">
+              <div className="text-[10px] font-semibold uppercase tracking-[0.25em]">
+         <a href="#" className="transition hover:text-white">
+          back to top
+         </a>
+        </div>
+        </section>
     </main>
   );
 }

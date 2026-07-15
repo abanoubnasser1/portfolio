@@ -11,7 +11,7 @@ export default function SmoothScroll({
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
-      duration: 5,
+      duration: 1,
       smoothWheel: true,
     });
 
