@@ -19,8 +19,8 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="col-span-12 lg:col-span-9">
-                <ScrollBlurText
+                <div className="col-span-12 min-w-0 lg:col-span-9">
+                  <ScrollBlurText
                   text="Let's build"
                   end="start 0.7"
                   className="text-[clamp(2.5rem,5vw,6rem)] leading-[1.05] tracking-[-0.05em]"
