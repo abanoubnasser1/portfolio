@@ -19,7 +19,7 @@ export default function Hero() {
           Brand Designer
         </p>
         <p className="mt-8 text-s text-center font-light leading-[1.5] tracking-tight">
-          I create strategic brand identities and visual systems that turn businesses into memorable brands.
+          Strategic brand identities and visual systems that turn businesses into memorable brands.
         </p>
       </div>
     </section>

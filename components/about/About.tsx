@@ -22,7 +22,7 @@ export default function About() {
 
               <div className="col-span-12 lg:col-span-9">
                 <ScrollBlurText
-                    text="I'm Abanoub Nasser, a Graphic Designer & Brand Identity Designer focused on creating brands that are both visually distinctive and strategically effective. Every project begins with understanding the business, its audience, and the message it needs to communicate. From brand identity and packaging to digital design, I craft clean, timeless visual systems that strengthen recognition, build trust, and deliver consistent experiences across every touchpoint."
+                    text="I'm Abanoub Nasser, a Brand Designer."
                    
                     className="max-w-5xl text-[clamp(2.2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.04em]"
                     start = "start .62"
@@ -33,12 +33,13 @@ export default function About() {
                   across every touchpoint.
                 </h2> */}
 
-                <p className="mt-12 max-w-2xl text-lg leading-9 text-zinc-400">
-                  My work focuses on branding, packaging and digital experiences.
-                  Every project is driven by thoughtful research, strong
-                  typography and clean visual systems that leave a lasting
-                  impression.
-                </p>
+            <ScrollBlurText
+                    text="My work focuses on branding, packaging and digital experiences. Every project is driven by thoughtful research, strong typography and clean visual systems that leave a lasting impression."
+                   
+                    className="mt-12 text-[clamp(1.25rem,0.5vw,1.25rem)] max-w-2xl text-lg leading-9 text-zinc-400"
+                    start = "start 0.6"
+                />
+                  
               </div>
             </div>
           </Container>

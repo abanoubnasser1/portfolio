@@ -11,14 +11,17 @@ export default function Home() {
       <Hero />
       <Navbar />
 
-      <section id="about" className="mx-auto w-full flex justify-center max-w-[1700px] px-20 py-42 md:px-30">
+      <section id="about" className="mx-auto w-full flex justify-center max-w-[1700px] py-42 md:px-30">
         <ScrollBlurText
           start="start 0.8"
           end="start 0.3"
-          text="Specializing in branding, logo design, packaging, and visual identity systems that help businesses build recognition and lasting impact. Currently available for freelance branding projects and selected long-term creative partnerships."
+          text="Specializing in branding, logo design, packaging, and visual identity systems that help businesses build recognition and lasting impact."
           className="max-w-4xl text-4xl font-medium leading-[1.15] tracking-tight text-white text-center md:text-5xl"
         />
+      
       </section>
+  
+         
 
       <About />
       <Projects />
