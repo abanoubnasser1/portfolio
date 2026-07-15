@@ -15,6 +15,10 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Abanoub Nasser",
   description: "Brand Identity Designer",
+  openGraph: {
+    images: '/og-image.png',
+  },
+  keywords: ['abanoub nasser', 'abanoubnasser', 'designer', 'brand', 'branding', 'identity', 'visual identity', 'visual systems', 'graphic design', 'digital experiences', 'packaging design', 'typography', 'creative direction', 'logo design', 'brand strategy', 'illustration', 'art direction', 'creative portfolio', 'design thinking', 'visual storytelling', 'brand communication', 'brand recognition', 'brand impact'],
 };
 
 export default function RootLayout({
