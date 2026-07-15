@@ -7,12 +7,12 @@ import { projects } from "@/lib/projects";
 
 export default function Projects() {
   return (
-    <section id="work" className="mx-auto w-full max-w-[1700px] px-12 py-32 md:px-20">
-      <p className="mb-16 uppercase tracking-[0.35em] text-zinc-500">
+    <section id="work" className="mx-auto w-full max-w-[1700px] px-6 py-20 sm:px-10 md:px-20 md:py-32">
+      <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
         Selected Work
       </p>
 
-      <div className="grid grid-cols-1 gap-x-8 gap-y-20 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 md:gap-y-20">
         {projects.map((project, i) => (
           <motion.div
             key={project.slug}
@@ -48,7 +48,7 @@ export default function Projects() {
                 </h3>
               </div>
 
-              <div className="mt-3 flex gap-3">
+              <div className="mt-3 flex flex-wrap gap-3">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}

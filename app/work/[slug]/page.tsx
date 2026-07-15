@@ -23,10 +23,10 @@ export default async function ProjectPage({
 
   return (
     <main>
-      <section className="mx-auto w-full max-w-[1700px] px-12 py-24 md:px-20 md:py-32">
+      <section className="mx-auto w-full max-w-[1700px] px-6 py-16 sm:px-10 md:px-20 md:py-32">
         <Link
           href="/"
-          className="mb-12 inline-block text-sm uppercase tracking-[0.3em] text-zinc-500 transition-colors hover:text-white"
+          className="mb-10 inline-block text-sm uppercase tracking-[0.3em] text-zinc-500 transition-colors hover:text-white md:mb-12"
         >
           ← Back
         </Link>
@@ -42,11 +42,11 @@ export default async function ProjectPage({
           ))}
         </div>
 
-        <h1 className="mt-6 text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-tight text-white">
+        <h1 className="mt-6 text-[clamp(2.2rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-tight text-white">
           {project.title}
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
           {project.description}
         </p>
 
@@ -59,7 +59,16 @@ export default async function ProjectPage({
           View Full Case on Behance ↗
         </Link>
 
-       
+        <div className="relative mt-12 aspect-[16/9] w-full overflow-hidden rounded-xl bg-zinc-900 sm:mt-16">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
 
         {project.gallery && project.gallery.length > 0 && (
           <div className="mt-8 flex flex-col">
@@ -79,12 +88,12 @@ export default async function ProjectPage({
         )}
       </section>
 
-      <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-12 py-24 md:px-20 md:py-32">
-        <p className="mb-16 uppercase tracking-[0.35em] text-zinc-500">
+      <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-6 py-16 sm:px-10 md:px-20 md:py-32">
+        <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
           Other Projects
         </p>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-3 md:gap-y-16">
           {otherProjects.map((p) => (
             <Link key={p.slug} href={`/work/${p.slug}`} className="group block">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-zinc-900">
@@ -104,8 +113,8 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-12 py-24 text-center md:px-20 md:py-32">
-        <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-medium tracking-tight text-white">
+      <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-6 py-16 text-center sm:px-10 md:px-20 md:py-32">
+        <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-medium tracking-tight text-white">
           Like what you see?
         </h2>
 
