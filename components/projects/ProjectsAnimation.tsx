@@ -19,7 +19,6 @@ export default function ProjectsAnimation() {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: "power3.out",
           scrollTrigger: {
             trigger: item,
             start: "top 85%",
