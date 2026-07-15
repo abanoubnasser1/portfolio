@@ -6,6 +6,7 @@ export interface Project {
   behanceHref: string;
   image: string;
   description: string;
+  gallery?: string[]; // صور إضافية
 }
 
 export const projects: Project[] = [
@@ -19,7 +20,23 @@ export const projects: Project[] = [
     image: "/projects/honey.png",
     description:
       "A brand identity and packaging system for a premium honey line, designed to feel both heritage-rooted and shelf-ready for modern retail.",
-  },
+  gallery: [
+    "/projects/sultan (1).jpg",
+    "/projects/sultan (2).jpg",
+    "/projects/sultan (3).jpg",
+    "/projects/sultan (4).jpg",
+    "/projects/sultan (5).jpg",
+    "/projects/sultan (6).jpg",
+    "/projects/sultan (7).jpg",
+    "/projects/sultan (8).jpg",
+    "/projects/sultan (9).jpg",
+    "/projects/sultan (10).jpg",
+    "/projects/sultan (11).jpg",
+    "/projects/sultan (12).jpg",
+    "/projects/sultan (13).jpg",
+
+  ],
+    },
   {
     slug: "q-west",
     index: "02",
@@ -29,6 +46,11 @@ export const projects: Project[] = [
     image: "/projects/qwest.jpg",
     description:
       "A full visual identity system built around clarity and structure, tailored to the client's positioning in a competitive market.",
+    gallery: [
+    "/projects/qwest (1).gif",
+    "/projects/qwest (2).jpg",
+    "/projects/qwest (3).jpg",
+  ],
   },
   {
     slug: "pas-architects",

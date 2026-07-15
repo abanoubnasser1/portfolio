@@ -59,16 +59,24 @@ export default async function ProjectPage({
           View Full Case on Behance ↗
         </Link>
 
-        <div className="relative mt-16 aspect-[16/9] w-full overflow-hidden rounded-xl bg-zinc-900">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-        </div>
+       
+
+        {project.gallery && project.gallery.length > 0 && (
+          <div className="mt-8 flex flex-col">
+            {project.gallery.map((img, i) => (
+              <div key={img} className="relative w-full overflow-hidden bg-zinc-900">
+                <Image
+                  src={img}
+                  alt={`${project.title} detail ${i + 1}`}
+                  width={1600}
+                  height={1200}
+                  className="h-auto w-full object-contain"
+                  sizes="100vw"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-12 py-24 md:px-20 md:py-32">
