@@ -14,17 +14,18 @@ export default function About() {
         <div className="scroll-content">
           <Container className="py-5">
             <div className="grid grid-cols-12 gap-10">
-              <div className="col-span-12 lg:col-span-2">
+              <div className="mx-auto w-full max-w-[1700px] col-span-12 lg:col-span-2">
+                
                 <p className="text-xs uppercase tracking-[0.4em] text-zinc-500 py-4">
                   About
                 </p>
               </div>
 
-              <div className="col-span-12 lg:col-span-9">
+              <div className="col-span-12 lg:col-span-9 mx-auto w-full max-w-[1700px]">
                 <ScrollBlurText
                     text="I'm Abanoub Nasser, a Brand Designer."
                    
-                    className="max-w-5xl text-[clamp(2.2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.04em]"
+                    className="text-[clamp(2.2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.04em]"
                     start = "start .62"
                 />
                 {/* <h2 className="max-w-5xl text-[clamp(2.2rem,4vw,4.8rem)] leading-[1.05] tracking-[-0.04em]">
@@ -37,6 +38,7 @@ export default function About() {
                     text="My work focuses on branding, packaging and digital experiences. Every project is driven by thoughtful research, strong typography and clean visual systems that leave a lasting impression."
                    
                     className="mt-12 text-[clamp(1.25rem,0.5vw,1.25rem)] max-w-2xl text-lg leading-9 text-zinc-400"
+                    
                     start = "start 0.6"
                 />
                   

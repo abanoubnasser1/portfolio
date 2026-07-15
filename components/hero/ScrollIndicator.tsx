@@ -25,7 +25,7 @@ export default function ScrollIndicator() {
         >
           <rect
             x="1"
-            y="3"
+            y="2"
             width="14"
             height="18"
             rx="5"
