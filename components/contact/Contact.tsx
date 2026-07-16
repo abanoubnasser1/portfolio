@@ -32,10 +32,10 @@ export default function Contact() {
                 />
 
                 <Link
-                  href="mailto:abanoubnasser01@gmail.com"
+                  href="mailto:contact@abanoubnasser.com"
                   className="mt-5 inline-block rounded-full border border-white/10 px-6 py-3 text-lg text-zinc-400 no-underline transition-colors hover:border-white/30 hover:text-white"
                 >
-                  info@abanoubnasser.com
+                  contact@abanoubnasser.com
                 </Link>
 
                 <FindMeOn />

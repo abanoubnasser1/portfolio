@@ -14,12 +14,12 @@ export default function About() {
         <div className="scroll-content">
           <Container className="py-5">
             <div className="grid grid-cols-12 gap-10">
-              <div className="mx-auto w-full max-w-[1700px] col-span-12 lg:col-span-2">
+              
                 
                 <p className="text-xs uppercase tracking-[0.4em] text-zinc-500 py-4">
                   About
                 </p>
-              </div>
+              
 
               <div className="col-span-12 min-w-0 lg:col-span-9">
                   <ScrollBlurText
