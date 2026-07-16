@@ -3,8 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "@/lib/projects";
 
+
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+export async function generateMetadata() {
+  const project = projects[0]; // Get the first project as an example
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `https://abanoubnasser.com/work/${project.slug}`,
+      images: [project.image],
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -125,6 +139,7 @@ export default async function ProjectPage({
           </Link>
         </div>
       </section>
+      
     </main>
   );
 }

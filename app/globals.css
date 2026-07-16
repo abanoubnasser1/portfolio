@@ -15,8 +15,15 @@
     }
 
     html {
-        scroll-behavior: sharpen;
+        scroll-behavior: smooth;
     }
+    /* src/index.css */
+@font-face {
+  font-family: 'LamaSans';
+  src: url('/public/lamasans/LamaSans-RegularExpanded.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
     body {
         background: var(--background);

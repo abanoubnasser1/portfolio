@@ -13,13 +13,49 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Abanoub Nasser",
-  description: "Brand Identity Designer",
+title: {
+    default: "Abanoub Nasser",
+    template: "%s | Abanoub Nasser",
+  },
+    description: "Brand Designer",
   openGraph: {
-    images: '/og-image.png',
+  title: "Abanoub Nasser",
+  description:
+    "Brand Designer",
+
+  url: "https://abanoubnasser.com",
+
+  siteName: "Abanoub Nasser",
+
+  images: [
+    {
+      url: "/og-image.png",
+     
+    },
+  ],
+
+  type: "website",
+
   },
   keywords: ['abanoub nasser', 'abanoubnasser', 'designer', 'brand', 'branding', 'identity', 'visual identity', 'visual systems', 'graphic design', 'digital experiences', 'packaging design', 'typography', 'creative direction', 'logo design', 'brand strategy', 'illustration', 'art direction', 'creative portfolio', 'design thinking', 'visual storytelling', 'brand communication', 'brand recognition', 'brand impact'],
+twitter: {
+  card: "summary_large_image",
+
+  title: "Abanoub Nasser",
+
+  description:
+    "Senior Product Designer",
+
+  images: ["/og-image.png"],
+},
+icons: {
+  icon: "/favicon.ico",
+  shortcut: "/favicon.ico",
+  apple: "/favicon.png",
+},
 };
+
+
 
 export default function RootLayout({
   children,
