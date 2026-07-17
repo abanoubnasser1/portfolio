@@ -1,6 +1,5 @@
 export interface Project {
   slug: string;
-  index: string;
   tags: string[];
   title: string;
   behanceHref: string;
@@ -12,7 +11,6 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "al-sultan-omar-honey",
-    index: "01",
     tags: ["Branding", "Packaging", "Honey"],
     title: "Al Sultan Omar - Premium Honey",
     behanceHref:
@@ -39,7 +37,6 @@ export const projects: Project[] = [
     },
   {
     slug: "q-west",
-    index: "02",
     tags: ["Branding", "Coffee", "Packaging"],
     title: "Q West - Cafe & Roastery",
     behanceHref: "https://www.behance.net/gallery/207691419/Q-WEST",
@@ -64,7 +61,6 @@ export const projects: Project[] = [
   },
   {
     slug: "pas-architects",
-    index: "03",
     tags: ["Branding", "Architecture"],
     title: "PAS - Architects",
     behanceHref: "https://www.behance.net/gallery/239957481/PAS-Architects",
@@ -89,7 +85,6 @@ export const projects: Project[] = [
   },
   {
     slug: "corelink-technologies",
-    index: "04",
     tags: ["Branding", "Tech", "Digital"],
     title: "Corelink - Technologies",
     behanceHref: "https://www.behance.net/gallery/236718675/Corelink-Technologies",
@@ -111,6 +106,81 @@ export const projects: Project[] = [
 
   ],
   },
+  {
+    slug: "Haifa - Veils and Hijabs",
+    tags: ["Branding", "Veils", "Hijabs", "Arabic"],
+    title: "Haifa - Veils and Hijabs",
+    behanceHref: "https://www.behance.net/gallery/204296833/Haifa-Branding",
+    image: "/projects/heifa/3.jpg",
+    description:
+      "Haifa is a unique brand specializing in veils and hijabs, with its name inspired by the city of Haifa in Palestine, reflecting the brand's deep cultural roots and commitment to heritage.",
+    gallery: [
+    "/projects/heifa/1.jpg",
+    "/projects/heifa/2.jpg",
+    "/projects/heifa/3.jpg",
+    "/projects/heifa/4.jpg",
+    "/projects/heifa/5.jpg",
+    "/projects/heifa/6.jpg",
+    "/projects/heifa/7.jpg",
+    "/projects/heifa/8.jpg",
+    "/projects/heifa/9.gif",
+    "/projects/heifa/10.jpg",
+    "/projects/heifa/11.jpg",
+    "/projects/heifa/12.jpg",
+    "/projects/heifa/13.jpg",
+    "/projects/heifa/14.jpg",
+    "/projects/heifa/15.jpg",
+  ],
+  },
+  {
+    slug: "Honna-branding",
+    tags: ["Logo Design", "Islamic", "Fashion", "Arabic"],
+    title: "Honna-branding",
+    behanceHref: "https://www.behance.net/gallery/172046241/Honna-Logo-Design",
+    image: "/projects/honna.png",
+    description:
+      "Honna (هُنَّ) is an Egyption brand specializing in hijab and Islamic fashion. With a focus on style, comfort, and modesty, Honna offers high-quality hijabs, abayas, modest dresses, and accessories.",
+    gallery: [
+    "/projects/honna/1.png",
+    "/projects/honna/2.gif",
+    "/projects/honna/3.png",
+    "/projects/honna/4.png",
+    "/projects/honna/5.png",
+    "/projects/honna/6.png",
+    "/projects/honna/7.png",
+    "/projects/honna/8.png",
+    "/projects/honna/9.png",
+    "/projects/honna/10.png",
+    "/projects/honna/11.png",
+  ],
+  },
+  {
+    slug: "Zelal - HOME DECOR AND FURNITURE",
+    tags: ["Branding", "Coffee", "Packaging"],
+    title: "Zelal - Home Decor & Furniture",
+    behanceHref: "https://www.behance.net/gallery/205401425/Zelal-Branding",
+    image: "/projects/zelal image.png",
+    description:
+      "ZELAL, DERIVED FROM THE ARABIC WORD \"ظلال\" MEANING \"SHADOWS\" OR \"SHADES,\" EMBODIES THE SUBTLE ELEGANCE AND SERENE AMBIANCE THAT SHADOWS BRING INTO A SPACE. THE BRAND IS DEDICATED TO OFFERING REFINED HOME DECOR AND FURNITURE THAT ADD DEPTH AND WARMTH TO ANY ENVIRONMENT.",
+    gallery: [
+    "/projects/zelal/1.jpg",
+    "/projects/zelal/2.jpg",
+    "/projects/zelal/3.gif",
+    "/projects/zelal/4.jpg",
+    "/projects/zelal/5.jpg",
+    "/projects/zelal/6.jpg",
+    "/projects/zelal/7.jpg",
+    "/projects/zelal/8.jpg",
+    "/projects/zelal/9.jpg",
+    "/projects/zelal/10.jpg",
+    "/projects/zelal/11.jpg",
+    "/projects/zelal/12.jpg",
+    "/projects/zelal/13.jpg",
+    "/projects/zelal/15.jpg",
+  ],
+  }
+  
+
 ];
 
 export function getProjectBySlug(slug: string) {

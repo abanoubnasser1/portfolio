@@ -59,16 +59,7 @@ export default async function ProjectPage({
           View Full Case on Behance ↗
         </Link>
 
-        <div className="relative mt-12 aspect-[16/9] w-full overflow-hidden rounded-xl bg-zinc-900 sm:mt-16">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-        </div>
+       
 
         {project.gallery && project.gallery.length > 0 && (
           <div className="mt-8 flex flex-col">

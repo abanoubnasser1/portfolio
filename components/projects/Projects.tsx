@@ -53,9 +53,7 @@ export default function Projects() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                <span className="absolute left-5 top-5 text-sm tabular-nums text-white/70">
-                  {project.index}
-                </span>
+              
 
                 <span className="absolute right-5 top-5 flex h-10 w-10 -translate-y-2 items-center justify-center rounded-full bg-white text-black opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   ↗
