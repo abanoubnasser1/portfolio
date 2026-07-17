@@ -41,7 +41,7 @@ export const projects: Project[] = [
     slug: "q-west",
     index: "02",
     tags: ["Branding", "Coffee", "Packaging"],
-    title: "Q West",
+    title: "Q West - Cafe & Roastery",
     behanceHref: "https://www.behance.net/gallery/207691419/Q-WEST",
     image: "/projects/qwest.jpg",
     description:
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     slug: "corelink-technologies",
     index: "04",
     tags: ["Branding", "Tech", "Digital"],
-    title: "Corelink Technologies",
+    title: "Corelink - Technologies",
     behanceHref: "https://www.behance.net/gallery/236718675/Corelink-Technologies",
     image: "/projects/corelink.jpg",
     description:

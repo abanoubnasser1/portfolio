@@ -12,7 +12,7 @@ export default function BackgroundVideo() {
     offset: ["start start", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.6]);
 
   useEffect(() => {
     const video = videoRef.current;
