@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import ScrollBlurText from "@/components/text/ScrollBlurText";
@@ -32,17 +33,26 @@ export default function About() {
                   className="mt-12 text-[clamp(1.25rem,0.5vw,1.25rem)] max-w-2xl text-lg leading-9 text-zinc-400"
                   start="start 0.6"
                 />
+
+                <Link
+                  href="/cv/Abanoub-Nasser-CV.pdf"
+                  download
+                  className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm uppercase tracking-widest text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+                >
+                  Download CV
+                  <span className="text-base">↓</span>
+                </Link>
               </div>
 
               <div className="col-span-12 lg:col-span-4">
                 <div className="relative mx-auto aspect-[3/4] w-full max-w-md self-start">
-                 <Image
-  src="/content/profile1.png"
-  alt="Abanoub Nasser"
-  fill
-  className="object-cover object-bottom"
-  sizes="(min-width: 1024px) 30vw, 90vw"
-/>
+                  <Image
+                    src="/content/profile1.png"
+                    alt="Abanoub Nasser"
+                    fill
+                    className="object-cover object-bottom"
+                    sizes="(min-width: 1024px) 30vw, 90vw"
+                  />
                 </div>
               </div>
             </div>

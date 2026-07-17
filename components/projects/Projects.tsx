@@ -1,19 +1,39 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { projects } from "@/lib/projects";
+import { projects as allProjects } from "@/lib/projects";
+
+function shuffle<T>(array: T[]): T[] {
+  const result = [...array];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
 
 export default function Projects() {
+  const [orderedProjects, setOrderedProjects] = useState(allProjects);
+  const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    setOrderedProjects(shuffle(allProjects));
+  }, []);
+
+  const visibleProjects = showAll ? orderedProjects : orderedProjects.slice(0, 4);
+  const hasMore = allProjects.length > 4;
+
   return (
-<section id="work" className="mx-auto w-full max-w-[1700px] px-6 pb-20 pt-8 sm:px-10 md:px-20 md:pb-32 md:pt-10">
-        <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
+    <section id="work" className="mx-auto w-full max-w-[1700px] px-6 pb-20 pt-8 sm:px-10 md:px-20 md:pb-32 md:pt-10">
+      <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
         Selected Work
       </p>
 
       <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 md:gap-y-20">
-        {projects.map((project, i) => (
+        {visibleProjects.map((project, i) => (
           <motion.div
             key={project.slug}
             initial={{ opacity: 0, y: 40 }}
@@ -62,6 +82,17 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {hasMore && !showAll && (
+        <div className="mt-16 flex justify-center">
+          <button
+            onClick={() => setShowAll(true)}
+            className="rounded-full border border-white/10 px-6 py-2.5 text-xs uppercase tracking-widest text-zinc-400 transition-colors hover:border-white/30 hover:text-white"
+          >
+            Show More
+          </button>
+        </div>
+      )}
     </section>
   );
 }

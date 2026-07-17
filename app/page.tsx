@@ -4,6 +4,8 @@ import ScrollBlurText from "@/components/text/ScrollBlurText";
 import Projects from "@/components/projects/Projects";
 import About from "@/components/about/About";
 import Contact from "@/components/contact/Contact";
+import LogoMarquee from "@/components/clients/LogoMarquee";
+
 
 export default function Home() {
   return (
@@ -26,6 +28,7 @@ export default function Home() {
 
       <About />
       <Projects />
+      <LogoMarquee />
       <Contact />
       <section id="back to top" className="mx-auto w-full flex justify-center max-w-[1700px] py-30 ">
               <div className="text-[10px] font-semibold uppercase tracking-[0.25em]">
