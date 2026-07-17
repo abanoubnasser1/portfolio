@@ -14,20 +14,18 @@ export default function About() {
         <div className="scroll-content">
           <Container className="py-5">
             <div className="grid grid-cols-12 gap-10">
-              
+              <div className="mx-auto w-full max-w-[1700px] col-span-12 lg:col-span-2">
                 
-                <p className="text-xs uppercase tracking-[0.4em] text-zinc-500 py-4">
-                  About
+<p className="font-expanded text-xs uppercase tracking-[0.4em] text-zinc-500 py-4">                  About
                 </p>
-              
+              </div>
 
-              <div className="col-span-12 min-w-0 lg:col-span-9">
-                  <ScrollBlurText
-                    text="I'm Abanoub Nasser, a Brand Designer."
-                   
-                    className="text-[clamp(2.2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.04em]"
-                    start = "start .62"
-                />
+            <div className="col-span-12 min-w-0 lg:col-span-9">
+                 <ScrollBlurText
+  text="I'm Abanoub Nasser, a Brand Designer."
+  className="font-condensed font-bold text-[clamp(2.2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.02em]"
+  start="start .62"
+/>
                 {/* <h2 className="max-w-5xl text-[clamp(2.2rem,4vw,4.8rem)] leading-[1.05] tracking-[-0.04em]">
                   I create visual identities that combine clarity, strategy and
                   timeless aesthetics, helping brands communicate with confidence

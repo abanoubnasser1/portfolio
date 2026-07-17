@@ -5,12 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/projects";
 
+
 export default function Projects() {
   return (
     <section id="work" className="mx-auto w-full max-w-[1700px] px-6 py-20 sm:px-10 md:px-20 md:py-32">
-      <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
-        Selected Work
-      </p>
+      <p className="font-expanded mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
+  Selected Work
+</p>
 
       <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 md:gap-y-20">
         {projects.map((project, i) => (
@@ -43,8 +44,7 @@ export default function Projects() {
               </div>
 
               <div className="mt-6 flex items-start justify-between gap-4">
-                <h3 className="text-2xl font-medium tracking-tight text-white transition-colors duration-300 md:text-3xl">
-                  {project.title}
+<h3 className="font-condensed font-bold text-2xl tracking-tight text-white transition-colors duration-300 md:text-3xl">                  {project.title}
                 </h3>
               </div>
 
