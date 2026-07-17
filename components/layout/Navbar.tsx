@@ -10,13 +10,15 @@ export default function Navbar() {
         }}
       />
 
-      <nav className="relative flex justify-center gap-6 px-4 py-5 text-xs sm:gap-10 sm:px-6 sm:py-6 sm:text-sm md:gap-12">
-        <a href="#about" className="transition hover:text-white">
-          ABOUT
-        </a>
+      <nav className="font-syne font-semibold relative flex justify-center gap-6 px-4 py-5 text-xs sm:gap-10 sm:px-6 sm:py-6 sm:text-sm md:gap-12">
         <a href="#work" className="transition hover:text-white">
           WORK
         </a>
+
+        <a href="#about" className="transition hover:text-white">
+          ABOUT
+        </a>
+
         <a href="#contact" className="transition hover:text-white">
           CONTACT
         </a>

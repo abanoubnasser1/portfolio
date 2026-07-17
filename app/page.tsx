@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <link rel="icon" href="/favicon.ico" sizes="any" />
 
-      <section id="about" className="mx-auto w-full flex justify-center max-w-[1700px] py-42 md:px-30">
+      <section id="about" className="font-syne font-semibold mx-auto w-full flex justify-center max-w-[1700px] py-42 md:px-30">
         <ScrollBlurText
           start="start 0.8"
           end="start 0.3"

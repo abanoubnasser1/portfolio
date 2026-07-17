@@ -3,22 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "@/lib/projects";
 
-
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
-}
-export async function generateMetadata() {
-  const project = projects[0]; // Get the first project as an example
-  return {
-    title: project.title,
-    description: project.description,
-    openGraph: {
-      title: project.title,
-      description: project.description,
-      url: `https://abanoubnasser.com/work/${project.slug}`,
-      images: [project.image],
-    },
-  };
 }
 
 export default async function ProjectPage({
@@ -56,7 +42,7 @@ export default async function ProjectPage({
           ))}
         </div>
 
-        <h1 className="mt-6 text-[clamp(2.2rem,6vw,5.5rem)] font-medium leading-[1.05] tracking-tight text-white">
+        <h1 className="font-syne font-bold mt-6 text-[clamp(2.2rem,6vw,5.5rem)] leading-[1.05] tracking-tight text-white">
           {project.title}
         </h1>
 
@@ -73,7 +59,16 @@ export default async function ProjectPage({
           View Full Case on Behance ↗
         </Link>
 
-        
+        <div className="relative mt-12 aspect-[16/9] w-full overflow-hidden rounded-xl bg-zinc-900 sm:mt-16">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
 
         {project.gallery && project.gallery.length > 0 && (
           <div className="mt-8 flex flex-col">
@@ -110,7 +105,7 @@ export default async function ProjectPage({
                   sizes="(min-width: 768px) 30vw, 90vw"
                 />
               </div>
-              <h3 className="mt-4 text-xl font-medium tracking-tight text-white">
+              <h3 className="font-syne font-semibold mt-4 text-xl tracking-tight text-white">
                 {p.title}
               </h3>
             </Link>
@@ -119,7 +114,7 @@ export default async function ProjectPage({
       </section>
 
       <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-6 py-16 text-center sm:px-10 md:px-20 md:py-32">
-        <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-medium tracking-tight text-white">
+        <h2 className="font-syne font-bold text-[clamp(1.8rem,4vw,3.5rem)] tracking-tight text-white">
           Like what you see?
         </h2>
 
@@ -139,7 +134,6 @@ export default async function ProjectPage({
           </Link>
         </div>
       </section>
-      
     </main>
   );
 }
