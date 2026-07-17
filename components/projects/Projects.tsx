@@ -7,8 +7,8 @@ import { projects } from "@/lib/projects";
 
 export default function Projects() {
   return (
-    <section id="work" className="mx-auto w-full max-w-[1700px] px-6 py-20 sm:px-10 md:px-20 md:py-32">
-      <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
+<section id="work" className="mx-auto w-full max-w-[1700px] px-6 pb-20 pt-8 sm:px-10 md:px-20 md:pb-32 md:pt-10">
+        <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
         Selected Work
       </p>
 
