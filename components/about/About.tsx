@@ -14,44 +14,44 @@ export default function About() {
       <div className="scroll-section w-full">
         <div className="scroll-content">
           <Container>
-            <div className="grid grid-cols-12 gap-10">
+            <div className="grid grid-cols-12 gap-8 md:gap-10">
               <div className="col-span-12 lg:col-span-2">
                 <p className="text-xs uppercase tracking-[0.4em] text-zinc-500">
                   About
                 </p>
               </div>
 
-              <div className="col-span-12 min-w-0 lg:col-span-6">
+              <div className="order-2 col-span-12 min-w-0 lg:order-1 lg:col-span-6">
                 <ScrollBlurText
                   text="I'm Abanoub Nasser, a Brand Designer."
-                  className="font-syne font-bold text-[clamp(2.2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.02em]"
+                  className="font-syne font-bold text-[clamp(2rem,2vw,4.8rem)] leading-[1.05] tracking-[-0.02em]"
                   start="start .62"
                 />
 
                 <ScrollBlurText
                   text="My work focuses on branding, packaging and digital experiences. Every project is driven by thoughtful research, strong typography and clean visual systems that leave a lasting impression."
-                  className="mt-12 text-[clamp(1.25rem,0.5vw,1.25rem)] max-w-2xl text-lg leading-9 text-zinc-400"
+                  className="mt-8 text-base leading-8 text-zinc-400 sm:mt-12 sm:max-w-2xl sm:text-lg sm:leading-9"
                   start="start 0.6"
                 />
 
                 <Link
                   href="/cv/Abanoub-Nasser-CV.pdf"
                   download
-                  className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm uppercase tracking-widest text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-xs uppercase tracking-widest text-zinc-300 transition-colors hover:border-white/30 hover:text-white sm:mt-10 sm:text-sm"
                 >
                   Download CV
                   <span className="text-base">↓</span>
                 </Link>
               </div>
 
-              <div className="col-span-12 lg:col-span-4">
-                <div className="relative mx-auto aspect-[3/4] w-full max-w-md self-start">
+              <div className="order-1 col-span-12 min-w-0 lg:order-2 lg:col-span-4">
+                <div className="relative mx-auto aspect-[3/4] w-full max-w-[240px] self-start sm:max-w-xs lg:max-w-md">
                   <Image
                     src="/content/profile1.png"
                     alt="Abanoub Nasser"
                     fill
                     className="object-cover object-bottom"
-                    sizes="(min-width: 1024px) 30vw, 90vw"
+                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 40vw, 60vw"
                   />
                 </div>
               </div>

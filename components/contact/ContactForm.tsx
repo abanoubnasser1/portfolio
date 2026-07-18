@@ -31,21 +31,24 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10 flex max-w-2xl flex-col gap-4">
-      <div className="flex flex-col gap-4 sm:flex-row">
+    <form
+      onSubmit={handleSubmit}
+      className="mt-8 flex w-full min-w-0 max-w-2xl flex-col gap-3 sm:mt-10 sm:gap-4"
+    >
+      <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:gap-4">
         <input
           type="text"
           name="name"
           placeholder="Your name"
           required
-          className="w-full rounded-full border border-white/10 bg-transparent px-6 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30"
+          className="w-full min-w-0 rounded-full border border-white/10 bg-transparent px-5 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30 sm:px-6 sm:py-3"
         />
         <input
           type="email"
           name="email"
           placeholder="Your email"
           required
-          className="w-full rounded-full border border-white/10 bg-transparent px-6 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30"
+          className="w-full min-w-0 rounded-full border border-white/10 bg-transparent px-5 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30 sm:px-6 sm:py-3"
         />
       </div>
 
@@ -53,14 +56,14 @@ export default function ContactForm() {
         name="message"
         placeholder="Tell me about your project"
         required
-        rows={5}
-        className="w-full resize-none rounded-2xl border border-white/10 bg-transparent px-6 py-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30"
+        rows={4}
+        className="w-full min-w-0 resize-none rounded-2xl border border-white/10 bg-transparent px-5 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30 sm:px-6 sm:py-4"
       />
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-2 inline-block w-fit rounded-full border border-white/10 bg-white px-8 py-3 text-sm uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="mt-1 inline-block w-fit rounded-full border border-white/10 bg-white px-6 py-2.5 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50 sm:mt-2 sm:px-8 sm:py-3 sm:text-sm"
       >
         {status === "loading" ? "Sending..." : "Send Message"}
       </button>

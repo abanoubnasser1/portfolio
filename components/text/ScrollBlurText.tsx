@@ -13,7 +13,7 @@ interface RevealWrapperProps {
 
 function RevealWrapper({ progress, range, children, className = "" }: RevealWrapperProps) {
   const opacity = useTransform(progress, range, [0, 1]);
-  const blur = useTransform(progress, range, [8, 0]);
+  const blur = useTransform(progress, range, [10, 0]);
   const filter = useTransform(blur, (value) => `blur(${value}px)`);
 
   return (
@@ -42,6 +42,13 @@ interface ScrollBlurTextProps {
   className?: string;
   start?: string;
   end?: string;
+  /**
+   * How much each word's reveal window overlaps with the next one.
+   * Higher = more words visibly mid-blur at the same time (graduated look).
+   * 1 = each word's window is as wide as the whole sequence (max overlap).
+   * 0 = no overlap (old on/off behavior).
+   */
+  overlap?: number;
 }
 
 export default function ScrollBlurText({
@@ -49,7 +56,8 @@ export default function ScrollBlurText({
   items,
   className = "",
   start = "start 0.9",
-  end = "start 0.35",
+  end = "start 0.4",
+  overlap = 4,
 }: ScrollBlurTextProps) {
   const containerRef = useRef<HTMLParagraphElement>(null);
 
@@ -61,13 +69,17 @@ export default function ScrollBlurText({
   const resolvedItems: ScrollBlurItem[] =
     items ?? (text ?? "").split(" ").map((word) => ({ type: "word", content: word }));
 
+  const count = resolvedItems.length;
+  const windowWidth = Math.min(1, (1 / count) * (1 + overlap));
+  const step = count > 1 ? (1 - windowWidth) / (count - 1) : 0;
+
   return (
     <p ref={containerRef} className={className}>
       {resolvedItems.map((item, i) => {
-        const rangeStart = i / resolvedItems.length;
-        const rangeEnd = rangeStart + 1 / resolvedItems.length;
+        const rangeStart = i * step;
+        const rangeEnd = Math.min(1, rangeStart + windowWidth);
         const range: [number, number] = [rangeStart, rangeEnd];
-        const isLast = i === resolvedItems.length - 1;
+        const isLast = i === count - 1;
 
         if (item.type === "image") {
           const imageEl = (
