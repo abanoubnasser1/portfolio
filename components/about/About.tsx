@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import ScrollBlurText from "@/components/text/ScrollBlurText";
+import DownloadCVButton from "@/components/about/DownloadCVButton";
 
 export default function About() {
   return (
@@ -34,14 +35,7 @@ export default function About() {
                   start="start 0.6"
                 />
 
-                <Link
-                  href="/cv/Abanoub-Nasser-CV.pdf"
-                  download
-                  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-xs uppercase tracking-widest text-zinc-300 transition-colors hover:border-white/30 hover:text-white sm:mt-10 sm:text-sm"
-                >
-                  Download CV
-                  <span className="text-base">↓</span>
-                </Link>
+          <DownloadCVButton />
               </div>
 
               <div className="order-1 col-span-12 min-w-0 lg:order-2 lg:col-span-4">

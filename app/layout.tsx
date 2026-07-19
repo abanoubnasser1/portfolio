@@ -9,6 +9,9 @@ import BackgroundVideo from "@/components/background/BackgroundVideo";
 import BackToTop from "@/components/layout/BackToTop";
 import CustomCursor from "@/components/layout/CustomCursor";
 import PersonSchema from "@/components/seo/PersonSchema";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
 
 
 
@@ -31,7 +34,16 @@ export const metadata: Metadata = {
   keywords: [
     "abanoub nasser",
     "abanoubnasser",
+    "abanob",
+    "abanoub",
+    "nasser",
+    "abanoub nasr",
+    "abanoub nassr",
+    "abanoub naser",
+    "abanob nasser",
     "designer",
+    "egyptian designer",
+    "arabic brand designer",
     "brand",
     "branding",
     "identity",
@@ -75,6 +87,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable} ${syne.variable} scroll-smooth`}>
       <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
         <PersonSchema />
+        <SpeedInsights/>
         <BackgroundVideo />
         <CustomCursor />
         <BackToTop />
@@ -83,6 +96,7 @@ export default function RootLayout({
           <ScrollProvider />
           <SmoothScroll>{children}</SmoothScroll>
         </PageTransition>
+         <Analytics />
       </body>
     </html>
   );

@@ -24,7 +24,7 @@
     [role="button"] {
         cursor: none;
     }
-    
+
     * {
         margin: 0;
         padding: 0;
@@ -33,6 +33,7 @@
 
     html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
     }
 
     body {
