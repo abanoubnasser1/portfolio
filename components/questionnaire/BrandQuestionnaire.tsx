@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { questionnaireSections, QuestionnaireField } from "@/lib/questionnaire";
-
 import Link from "next/link";
-
 
 type FormValue = string | string[];
 type FormState = Record<string, FormValue>;
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjedejb"; 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjedejb";
 
 function Field({
   field,
@@ -17,27 +15,35 @@ function Field({
   otherValue,
   onChange,
   onOtherChange,
+  showError,
 }: {
   field: QuestionnaireField;
   value: FormValue | undefined;
   otherValue: string;
   onChange: (id: string, value: FormValue) => void;
   onOtherChange: (id: string, value: string) => void;
+  showError: boolean;
 }) {
   const label = (
     <label className="mb-3 block text-sm font-medium text-white sm:text-base">
       {field.labelEn}
-      {field.required && <span className="ml-1 text-zinc-500">*</span>}
+      {field.required && <span className="ml-1 text-red-400">*</span>}
       {field.labelAr && (
         <span className="mt-1 block text-xs font-medium text-zinc-500" dir="rtl">
           {field.labelAr}
         </span>
       )}
+      {showError && (
+        <span className="mt-1 block text-xs font-normal text-red-400">
+          This field is required.
+        </span>
+      )}
     </label>
   );
 
-  const baseInputClass =
-    "w-full min-w-0 rounded-2xl border border-white/10 bg-transparent px-5 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30";
+  const errorRing = showError ? "border-red-400/60" : "border-white/10";
+
+  const baseInputClass = `w-full min-w-0 rounded-2xl border ${errorRing} bg-transparent px-5 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30`;
 
   if (field.type === "short_text") {
     return (
@@ -74,7 +80,7 @@ function Field({
     return (
       <div>
         {label}
-        <div className="flex flex-wrap gap-3">
+        <div className={`flex flex-wrap gap-3 rounded-2xl ${showError ? "ring-1 ring-red-400/40 p-3" : ""}`}>
           {field.options?.map((opt) => (
             <button
               key={opt.value}
@@ -116,7 +122,6 @@ function Field({
     );
   }
 
-  // multi_choice
   const selectedList = (value as string[]) ?? [];
   function toggle(optValue: string) {
     const next = selectedList.includes(optValue)
@@ -128,7 +133,7 @@ function Field({
   return (
     <div>
       {label}
-      <div className="flex flex-wrap gap-3">
+      <div className={`flex flex-wrap gap-3 rounded-2xl ${showError ? "ring-1 ring-red-400/40 p-3" : ""}`}>
         {field.options?.map((opt) => (
           <button
             key={opt.value}
@@ -175,43 +180,58 @@ export default function BrandQuestionnaire() {
   const [formData, setFormData] = useState<FormState>({});
   const [otherValues, setOtherValues] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, [stepIndex]);
+  const [errorFieldIds, setErrorFieldIds] = useState<string[]>([]);
 
   const section = questionnaireSections[stepIndex];
   const isLastStep = stepIndex === questionnaireSections.length - 1;
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [stepIndex]);
+
   function handleChange(id: string, value: FormValue) {
     setFormData((prev) => ({ ...prev, [id]: value }));
+    setErrorFieldIds((prev) => prev.filter((fieldId) => fieldId !== id));
   }
 
   function handleOtherChange(id: string, value: string) {
     setOtherValues((prev) => ({ ...prev, [id]: value }));
   }
 
-  function validateStep() {
-    return section.fields.every((field) => {
-      if (!field.required) return true;
-      const value = formData[field.id];
-      if (Array.isArray(value)) return value.length > 0;
-      return !!value;
-    });
+  function getMissingRequiredIds() {
+    return section.fields
+      .filter((field) => {
+        if (!field.required) return false;
+        const value = formData[field.id];
+        if (Array.isArray(value)) return value.length === 0;
+        return !value;
+      })
+      .map((field) => field.id);
   }
 
   function goNext() {
-    if (!validateStep()) return;
+    const missing = getMissingRequiredIds();
+    if (missing.length > 0) {
+      setErrorFieldIds(missing);
+      return;
+    }
+    setErrorFieldIds([]);
     setStepIndex((i) => Math.min(i + 1, questionnaireSections.length - 1));
   }
 
   function goBack() {
+    setErrorFieldIds([]);
     setStepIndex((i) => Math.max(i - 1, 0));
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!validateStep()) return;
+
+    const missing = getMissingRequiredIds();
+    if (missing.length > 0) {
+      setErrorFieldIds(missing);
+      return;
+    }
 
     setStatus("loading");
 
@@ -254,11 +274,11 @@ export default function BrandQuestionnaire() {
           Your answers have been received. I&apos;ll be in touch soon to kick things off.
         </p>
         <Link
-              href="/#"
-              className="mt-5 inline-block rounded-full border border-white/10 px-6 py-3 text-lg text-zinc-400 no-underline transition-colors hover:border-white/30 hover:text-white"
-            >
-              Return Home
-            </Link>
+          href="/#"
+          className="mt-5 inline-block rounded-full border border-white/10 px-6 py-3 text-lg text-zinc-400 no-underline transition-colors hover:border-white/30 hover:text-white"
+        >
+          Return Home
+        </Link>
       </div>
     );
   }
@@ -280,6 +300,12 @@ export default function BrandQuestionnaire() {
         <h2 className="font-syne mt-6 text-2xl font-bold text-white sm:text-3xl">
           {section.title}
         </h2>
+
+        {errorFieldIds.length > 0 && (
+          <p className="mt-4 rounded-xl border border-red-400/30 bg-red-400/5 px-4 py-3 text-sm text-red-400">
+            Please fill in the required fields marked in red below before continuing.
+          </p>
+        )}
       </div>
 
       <div className="flex flex-col gap-8">
@@ -291,6 +317,7 @@ export default function BrandQuestionnaire() {
             otherValue={otherValues[field.id] ?? ""}
             onChange={handleChange}
             onOtherChange={handleOtherChange}
+            showError={errorFieldIds.includes(field.id)}
           />
         ))}
       </div>
@@ -305,33 +332,31 @@ export default function BrandQuestionnaire() {
           Back
         </button>
 
-      {isLastStep ? (
-  <button
-    key="submit-button"
-    type="submit"
-    disabled={status === "loading"}
-    className="rounded-full border border-white/10 bg-white px-8 py-2.5 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50"
-  >
-    {status === "loading" ? "Submitting..." : "Submit"}
-  </button>
-) : (
-  <button
-    key="next-button"
-    type="button"
-    onClick={goNext}
-    className="rounded-full border border-white/10 bg-white px-8 py-2.5 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90"
-  >
-    Next
-  </button>
-)}
+        {isLastStep ? (
+          <button
+            key="submit-button"
+            type="submit"
+            disabled={status === "loading"}
+            className="rounded-full border border-white/10 bg-white px-8 py-2.5 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50"
+          >
+            {status === "loading" ? "Submitting..." : "Submit"}
+          </button>
+        ) : (
+          <button
+            key="next-button"
+            type="button"
+            onClick={goNext}
+            className="rounded-full border border-white/10 bg-white px-8 py-2.5 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90"
+          >
+            Next
+          </button>
+        )}
       </div>
 
       {status === "error" && (
-        
         <p className="mt-4 text-sm text-red-400">
           Something went wrong. Please try again or email me directly.
         </p>
-        
       )}
     </form>
   );
