@@ -11,6 +11,8 @@ import CustomCursor from "@/components/layout/CustomCursor";
 import PersonSchema from "@/components/seo/PersonSchema";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+
 
 
 
@@ -86,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${syne.variable} scroll-smooth`}>
       <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
+        <GoogleAnalytics />
         <PersonSchema />
         <SpeedInsights/>
         <BackgroundVideo />
