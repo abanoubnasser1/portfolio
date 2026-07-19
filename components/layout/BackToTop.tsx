@@ -9,10 +9,17 @@ export default function BackToTop() {
   useEffect(() => {
     function handleScroll() {
       const aboutSection = document.getElementById("about");
-      if (!aboutSection) return;
 
-      const aboutMiddle = aboutSection.offsetTop ;
-        setVisible(window.scrollY > aboutMiddle);
+      let threshold: number;
+
+      if (aboutSection) {
+        threshold = aboutSection.offsetTop + aboutSection.offsetHeight ;
+      } else {
+        // Fallback for pages without an #about section (e.g. project pages)
+        threshold = window.innerHeight * 0.6;
+      }
+
+      setVisible(window.scrollY > threshold);
     }
 
     handleScroll();
