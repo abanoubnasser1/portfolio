@@ -10,7 +10,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "al-sultan-omar-honey",
+    slug: "AlSultanOmar-PremiumHoney",
     tags: ["Branding", "Packaging", "Honey"],
     title: "Al Sultan Omar - Premium Honey",
     behanceHref:
@@ -36,7 +36,7 @@ export const projects: Project[] = [
   ],
     },
   {
-    slug: "q-west",
+    slug: "Q-West",
     tags: ["Branding", "Coffee", "Packaging"],
     title: "Q West - Cafe & Roastery",
     behanceHref: "https://www.behance.net/gallery/207691419/Q-WEST",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   ],
   },
   {
-    slug: "pas-architects",
+    slug: "PAS-Architects",
     tags: ["Branding", "Architecture"],
     title: "PAS - Architects",
     behanceHref: "https://www.behance.net/gallery/239957481/PAS-Architects",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   ],
   },
   {
-    slug: "corelink-technologies",
+    slug: "Corelink-technologies",
     tags: ["Branding", "Tech", "Digital"],
     title: "Corelink - Technologies",
     behanceHref: "https://www.behance.net/gallery/236718675/Corelink-Technologies",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   ],
   },
   {
-    slug: "Haifa - Veils and Hijabs",
+    slug: "Haifa-VeilsAndHijabs",
     tags: ["Branding", "Veils", "Hijabs", "Arabic"],
     title: "Haifa - Veils and Hijabs",
     behanceHref: "https://www.behance.net/gallery/204296833/Haifa-Branding",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
   ],
   },
   {
-    slug: "Honna-branding",
+    slug: "Honna-IslamicFashionBrand",
     tags: ["Logo Design", "Islamic", "Fashion", "Arabic"],
     title: "Honna - Islamic Fashion Brand",
     behanceHref: "https://www.behance.net/gallery/172046241/Honna-Logo-Design",
@@ -155,7 +155,7 @@ export const projects: Project[] = [
   ],
   },
   {
-    slug: "Zelal - HOME DECOR AND FURNITURE",
+    slug: "Zelal-HomeDecorAndFurniture",
     tags: ["Branding", "Coffee", "Packaging"],
     title: "Zelal - Home Decor & Furniture",
     behanceHref: "https://www.behance.net/gallery/205401425/Zelal-Branding",
@@ -180,7 +180,7 @@ export const projects: Project[] = [
   ],
   },
    {
-    slug: "PlanB",
+    slug: "PlanB-BurgerRestaurant",
     tags: ["Branding", "Burger", "Restaurant"],
     title: "Plan B - Burger Restaurant",
     behanceHref: "https://www.behance.net/gallery/164796805/Plan-B-Restaurant-Branding",
