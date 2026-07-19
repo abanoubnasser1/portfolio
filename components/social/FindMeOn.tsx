@@ -34,16 +34,18 @@ const iconItems: ScrollBlurItem[] = [
 
 export default function FindMeOn() {
   return (
-    <div className="border-white/10 pt-16">
+    <div className="border-white/10 pb-10 pt-16">
       <ScrollBlurText
         items={textItems}
-        className="font-syne font-bold text-[clamp(2rem,3.5vw,2.4rem)] leading-[0.1] tracking-[-0.02em] text-white"
+        start="start 0.95"
+        end="start 0.8"
+        className="font-syne font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] tracking-[-0.02em] text-white"
       />
 
       <ScrollBlurText
         items={iconItems}
-        start="start 0.75"
-        end="start 0.45"
+        start="start 0.98"
+        end="start 0.88"
         className="mt-6 flex items-center gap-5 sm:mt-8 sm:gap-7"
       />
     </div>

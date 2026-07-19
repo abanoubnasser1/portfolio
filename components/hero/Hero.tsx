@@ -21,8 +21,8 @@ export default function Hero() {
         <p className="mb-8 text-xs uppercase tracking-[0.25em] text-zinc-600 text-center sm:text-sm sm:tracking-[0.35em]">
           Brand Designer
         </p>
-        <p className="mx-auto mt-8 max-w-md text-sm text-center font-light leading-[1.6] tracking-tight sm:max-w-none sm:text-base">
-          Strategic brand identities and visual systems that turn businesses into memorable brands.
+        <p className="mx-auto mt-8 max-w-md text-sm text-center font-syne font-semibold leading-[1.6] tracking-tight sm:max-w-none sm:text-base">
+          Turn your business into a Memorable Brand.
         </p>
       </div>
 

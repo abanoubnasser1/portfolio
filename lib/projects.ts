@@ -135,7 +135,7 @@ export const projects: Project[] = [
   {
     slug: "Honna-branding",
     tags: ["Logo Design", "Islamic", "Fashion", "Arabic"],
-    title: "Honna-branding",
+    title: "Honna - Islamic Fashion Brand",
     behanceHref: "https://www.behance.net/gallery/172046241/Honna-Logo-Design",
     image: "/projects/honna.png",
     description:
@@ -178,7 +178,33 @@ export const projects: Project[] = [
     "/projects/zelal/13.jpg",
     "/projects/zelal/15.jpg",
   ],
+  },
+   {
+    slug: "Plan B Burger Restaurant ",
+    tags: ["Branding", "Burger", "Restaurant"],
+    title: "Plan B - Burger Restaurant",
+    behanceHref: "https://www.behance.net/gallery/164796805/Plan-B-Restaurant-Branding",
+    image: "/projects/planb.jpg",
+    description:
+      "A playful brand identity for Plan B, a burger restaurant. The wordmark plays on the letter 'B' as a burger icon itself — layered like a bun, patty, and toppings — paired with a warm, textured color palette and a bold vintage-inspired typeface that gives the brand a hand-crafted, approachable feel.",
+    gallery: [
+    "/projects/planb/1.jpg",
+    "/projects/planb/2.jpg",
+    "/projects/planb/3.gif",
+    "/projects/planb/4.jpg",
+    "/projects/planb/5.jpg",
+    "/projects/planb/6.jpg",
+    "/projects/planb/7.jpg",
+    "/projects/planb/8.jpg",
+    "/projects/planb/9.jpg",
+    "/projects/planb/10.jpg",
+    "/projects/planb/11.jpg",
+    "/projects/planb/12.jpg",
+
+  ],
   }
+  
+
   
 
 ];

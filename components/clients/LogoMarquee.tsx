@@ -10,10 +10,10 @@ const logos = [
     "/content/clients/logo (6).png",
     "/content/clients/logo (7).png",
     "/content/clients/logo (8).png",
-    "/content/clients/logo (9).png",
+
     "/content/clients/logo (10).png",
     "/content/clients/logo (11).png",
-    "/content/clients/logo (12).png",
+
     "/content/clients/logo (13).png",
     "/content/clients/logo (14).png",
     "/content/clients/logo (15).png",
