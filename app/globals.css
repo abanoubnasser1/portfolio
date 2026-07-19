@@ -19,6 +19,12 @@
     }
 }
 @layer base {
+     a,
+    button,
+    [role="button"] {
+        cursor: none;
+    }
+    
     * {
         margin: 0;
         padding: 0;

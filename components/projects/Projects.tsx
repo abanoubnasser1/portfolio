@@ -45,7 +45,7 @@ export default function Projects() {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-zinc-900">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} — brand identity design by Abanoub Nasser`}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                   sizes="(min-width: 768px) 45vw, 90vw"

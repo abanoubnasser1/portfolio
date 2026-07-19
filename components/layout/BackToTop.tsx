@@ -13,7 +13,7 @@ export default function BackToTop() {
       let threshold: number;
 
       if (aboutSection) {
-        threshold = aboutSection.offsetTop + aboutSection.offsetHeight ;
+        threshold = aboutSection.offsetTop ;
       } else {
         // Fallback for pages without an #about section (e.g. project pages)
         threshold = window.innerHeight * 0.6;

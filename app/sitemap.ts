@@ -1,24 +1,23 @@
 import { MetadataRoute } from "next";
+import { projects } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://abanoubnasser.com";
+
+  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${baseUrl}/work/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   return [
     {
-      url: "https://abanoubnasser.com",
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
-    {
-      url: "https://abanoubnasser.com/about",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://abanoubnasser.com/projects",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://abanoubnasser.com/contact",
-      lastModified: new Date(),
-    },
+    ...projectPages,
   ];
 }

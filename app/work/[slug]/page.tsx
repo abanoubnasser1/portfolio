@@ -2,9 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects, getProjectBySlug } from "@/lib/projects";
+import ProjectPageEffects from "@/components/work/ProjectPageEffects";
+
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) return {};
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: `${project.title} | Abanoub Nasser`,
+      description: project.description,
+      images: [{ url: project.image }],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [project.image],
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -23,6 +55,8 @@ export default async function ProjectPage({
 
   return (
     <main>
+            <ProjectPageEffects />
+
       <section className="mx-auto w-full max-w-[1700px] px-6 py-16 sm:px-10 md:px-20 md:py-32">
         <Link
           href="/"
@@ -79,7 +113,7 @@ export default async function ProjectPage({
         )}
       </section>
 
-      <section className="mx-auto w-full max-w-[1700px]  px-6 py-16 sm:px-10 md:px-20 md:py-32">
+      <section className="mx-auto w-full max-w-[1700px] px-6 py-16 sm:px-10 md:px-20 md:py-32">
         <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
           Other Projects
         </p>
@@ -90,21 +124,21 @@ export default async function ProjectPage({
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-zinc-900">
                 <Image
                   src={p.image}
-                  alt={p.title}
+                  alt={`${p.title} — brand identity design by Abanoub Nasser`}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                   sizes="(min-width: 768px) 30vw, 90vw"
                 />
               </div>
               <h3 className="font-syne font-semibold mt-4 text-xl tracking-tight text-white">
-                {p.title}
+                {`${p.title} — brand identity design by Abanoub Nasser`}
               </h3>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-6 py-16 text-center sm:px-10 md:px-20 md:py-32">
+      <section className="mx-auto w-full max-w-[1700px] px-6 py-16 text-center sm:px-10 md:px-20 md:py-32">
         <h2 className="font-syne font-bold text-[clamp(1.8rem,4vw,3.5rem)] tracking-tight text-white">
           Like what you see?
         </h2>
