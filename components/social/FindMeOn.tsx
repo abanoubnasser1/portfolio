@@ -2,34 +2,49 @@
 
 import ScrollBlurText, { ScrollBlurItem } from "../text/ScrollBlurText";
 
-const items: ScrollBlurItem[] = [
+const textItems: ScrollBlurItem[] = [
   { type: "word", content: "find" },
   { type: "word", content: "me" },
   { type: "word", content: "on" },
+];
+
+const iconItems: ScrollBlurItem[] = [
   {
     type: "image",
-    src: "/content/behance.png",
+    src: "/content/social/behance.png",
     alt: "Behance",
     href: "https://www.behance.net/abanoubnasser",
-    className: "h-[0.7em] w-auto inline align-middle -translate-y-[2px]",
+    className: "h-9 w-9 sm:h-11 sm:w-11 inline-block",
   },
   {
     type: "image",
-    src: "/content/instagram.png",
+    src: "/content/social/instagram.png",
     alt: "Instagram",
     href: "https://instagram.com/abanoubnasser_",
-    className: "h-[1.4em] w-auto inline align-middle -translate-y-[6px]",
+    className: "h-9 w-9 sm:h-11 sm:w-11 inline-block",
+  },
+  {
+    type: "image",
+    src: "/content/social/whatsapp.png",
+    alt: "WhatsApp",
+    href: "https://wa.me/201094172845",
+    className: "h-9 w-9 sm:h-11 sm:w-11 inline-block",
   },
 ];
 
 export default function FindMeOn() {
   return (
-    <div className="border-white/10 pb-16 pt-16">
+    <div className="border-white/10 pt-16">
       <ScrollBlurText
-        items={items}
-        start="start 0.98"
-        end="start 0.85"
-        className="whitespace-nowrap text-[clamp(1rem,4vw,2.75rem)] leading-[1.25] tracking-[-0.05em] text-white"
+        items={textItems}
+        className="font-syne font-bold text-[clamp(2rem,3.5vw,2.4rem)] leading-[0.1] tracking-[-0.02em] text-white"
+      />
+
+      <ScrollBlurText
+        items={iconItems}
+        start="start 0.75"
+        end="start 0.45"
+        className="mt-6 flex items-center gap-5 sm:mt-8 sm:gap-7"
       />
     </div>
   );
