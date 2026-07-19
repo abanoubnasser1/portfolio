@@ -9,7 +9,7 @@ export default function About() {
     <Section
       id="about"
       center={false}
-      className="border-t border-zinc-800 pt-24 pb-4 md:pt-32 md:pb-6"
+      className="border-zinc-800 pt-24 pb-4 md:pt-32 md:pb-6"
     >
       <div className="scroll-section w-full">
         <div className="scroll-content">

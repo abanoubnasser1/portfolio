@@ -6,6 +6,8 @@ import AnimationProvider from "@/components/providers/AnimationProvider";
 import ScrollProvider from "@/components/providers/ScrollProvider";
 import PageTransition from "@/components/transition/PageTransition";
 import BackgroundVideo from "@/components/background/BackgroundVideo";
+import BackToTop from "@/components/layout/BackToTop";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://abanoubnasser.com"),
@@ -69,6 +71,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable} ${syne.variable} scroll-smooth`}>
       <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
         <BackgroundVideo />
+        <BackToTop />
         <PageTransition>
           <AnimationProvider />
           <ScrollProvider />

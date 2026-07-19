@@ -79,7 +79,7 @@ export default async function ProjectPage({
         )}
       </section>
 
-      <section className="mx-auto w-full max-w-[1700px] border-t border-white/10 px-6 py-16 sm:px-10 md:px-20 md:py-32">
+      <section className="mx-auto w-full max-w-[1700px]  px-6 py-16 sm:px-10 md:px-20 md:py-32">
         <p className="mb-10 uppercase tracking-[0.35em] text-zinc-500 md:mb-16">
           Other Projects
         </p>
