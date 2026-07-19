@@ -180,7 +180,7 @@ export const projects: Project[] = [
   ],
   },
    {
-    slug: "Plan B Burger Restaurant ",
+    slug: "PlanB",
     tags: ["Branding", "Burger", "Restaurant"],
     title: "Plan B - Burger Restaurant",
     behanceHref: "https://www.behance.net/gallery/164796805/Plan-B-Restaurant-Branding",
@@ -190,7 +190,7 @@ export const projects: Project[] = [
     gallery: [
     "/projects/planb/1.jpg",
     "/projects/planb/2.jpg",
-    "/projects/planb/3.gif",
+    "/projects/planb/3.jpg",
     "/projects/planb/4.jpg",
     "/projects/planb/5.jpg",
     "/projects/planb/6.jpg",
