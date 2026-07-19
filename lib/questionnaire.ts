@@ -50,7 +50,7 @@ export const questionnaireSections: QuestionnaireSection[] = [
         id: "offer_type",
         labelEn: "Do you offer services or products?",
         labelAr: "هل تقدمون خدمات أم منتجات؟",
-        type: "single_choice",
+        type: "multi_choice",
         required: true,
         hasOther: true,
         options: [
@@ -109,7 +109,7 @@ export const questionnaireSections: QuestionnaireSection[] = [
         id: "audience_gender",
         labelEn: "Gender",
         labelAr: "النوع",
-        type: "single_choice",
+        type: "multi_choice",
         options: [
           { value: "male", labelEn: "Male", labelAr: "ذكر" },
           { value: "female", labelEn: "Female", labelAr: "أنثى" },
@@ -131,7 +131,7 @@ export const questionnaireSections: QuestionnaireSection[] = [
         id: "audience_income",
         labelEn: "Income",
         labelAr: "الدخل",
-        type: "single_choice",
+        type: "multi_choice",
         hasOther: true,
         options: [
           {
