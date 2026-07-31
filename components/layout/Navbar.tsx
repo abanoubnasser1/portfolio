@@ -1,6 +1,7 @@
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full;
+">
       <div
         className="pointer-events-none absolute inset-0 backdrop-blur-md"
         style={{

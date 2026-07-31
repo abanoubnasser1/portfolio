@@ -18,6 +18,7 @@ import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://abanoubnasser.com"),
   title: {
@@ -94,6 +95,8 @@ export default function RootLayout({
         <BackgroundVideo />
         <CustomCursor />
         <BackToTop />
+              
+
         <PageTransition>
           <AnimationProvider />
           <ScrollProvider />
