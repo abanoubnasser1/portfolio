@@ -37,8 +37,11 @@ export default function BackgroundVideo() {
   }, []);
 
   return (
-    <div ref={containerRef} className="fixed inset-0 -z-10 overflow-hidden">
-      <motion.video
+<div
+  ref={containerRef}
+  className="fixed inset-0 -z-10 overflow-hidden [contain:paint]"
+>
+        <motion.video
         ref={videoRef}
         style={{ scale }}
         autoPlay

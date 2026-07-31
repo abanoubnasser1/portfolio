@@ -39,7 +39,7 @@ export default function LogoMarquee() {
   const items = [...logos, ...logos];
 
   return (
-    <section className="w-full max-w-[100vw] overflow-x-hidden border-t border-white/10 py-10 md:py-20">
+<section className="w-full max-w-[100vw] overflow-x-hidden [contain:paint] border-t border-white/10 py-10 md:py-20">
       <div
         className="relative w-full max-w-full overflow-hidden"
         style={{
