@@ -44,6 +44,7 @@ export default function About() {
                     src="/content/profile1.png"
                     alt="Abanoub Nasser"
                     fill
+                    priority
                     className="object-cover object-bottom"
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 40vw, 60vw"
                   />
