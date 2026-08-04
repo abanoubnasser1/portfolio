@@ -5,6 +5,7 @@ import Projects from "@/components/projects/Projects";
 import About from "@/components/about/About";
 import Contact from "@/components/contact/Contact";
 import LogoMarquee from "@/components/clients/LogoMarquee";
+import Testimonials from "@/components/testimonials/Testimonials";
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         />
       </section>
       <Projects />
+      <Testimonials />
       <LogoMarquee />
       <Contact />
 

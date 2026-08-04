@@ -1,29 +1,6 @@
-export type FieldType = "short_text" | "long_text" | "single_choice" | "multi_choice";
+import { QuestionnaireSection } from "./questionnaire";
 
-export interface FieldOption {
-  value: string;
-  labelEn: string;
-  labelAr?: string;
-}
-
-export interface QuestionnaireField {
-  id: string;
-  labelEn: string;
-  labelAr?: string;
-  helperEn?: string;
-  type: FieldType;
-  required?: boolean;
-  options?: FieldOption[];
-  hasOther?: boolean;
-}
-
-export interface QuestionnaireSection {
-  title: string;
-  description?: string;
-  fields: QuestionnaireField[];
-}
-
-export const questionnaireSections: QuestionnaireSection[] = [
+export const businessQuestionnaireSections: QuestionnaireSection[] = [
   {
     title: "Business Overview",
     fields: [
@@ -120,9 +97,7 @@ export const questionnaireSections: QuestionnaireSection[] = [
         id: "child_age_range",
         labelEn: "Child age range",
         labelAr: "الفئة العمرية للأطفال",
-        type: "multi_choice",
-                hasOther: true,
-
+        type: "single_choice",
         options: [
           { value: "0-2", labelEn: "0–2" },
           { value: "3-5", labelEn: "3–5" },
@@ -135,8 +110,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "Initial target market",
         labelAr: "السوق المستهدف في البداية",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "saudi", labelEn: "Saudi Arabia" },
           { value: "uae", labelEn: "UAE" },
@@ -172,8 +145,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "What is the biggest value customers receive?",
         labelAr: "ما أهم قيمة يحصل عليها العميل؟",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "emotional", labelEn: "Emotional Connection" },
           { value: "engagement", labelEn: "Child Engagement" },
@@ -193,8 +164,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "Choose three words that describe your brand.",
         labelAr: "اختر ثلاث كلمات تصف علامتك التجارية.",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "friendly", labelEn: "Friendly" },
           { value: "creative", labelEn: "Creative" },
@@ -213,8 +182,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "Which emotions should customers feel?",
         labelAr: "ما المشاعر التي تريد أن يشعر بها العميل؟",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "happiness", labelEn: "Happiness" },
           { value: "excitement", labelEn: "Excitement" },
@@ -265,8 +232,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "What are your priorities during the first 6 months?",
         labelAr: "ما أولوياتك خلال أول 6 أشهر؟",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "brand_awareness", labelEn: "Brand Awareness" },
           { value: "sales", labelEn: "Sales" },
@@ -282,8 +247,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "Which marketing channels will you focus on?",
         labelAr: "ما القنوات التسويقية المستهدفة؟",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "instagram", labelEn: "Instagram" },
           { value: "tiktok", labelEn: "TikTok" },
@@ -302,8 +265,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "Monthly marketing budget",
         labelAr: "الميزانية الشهرية للتسويق",
         type: "single_choice",
-                hasOther: true,
-
         options: [
           { value: "under_500", labelEn: "Under $500" },
           { value: "500_1000", labelEn: "$500–1,000" },
@@ -321,8 +282,6 @@ export const questionnaireSections: QuestionnaireSection[] = [
         labelEn: "Which KPIs matter most?",
         labelAr: "ما أهم مؤشرات النجاح؟",
         type: "multi_choice",
-                hasOther: true,
-
         options: [
           { value: "sales", labelEn: "Sales" },
           { value: "revenue", labelEn: "Revenue" },
