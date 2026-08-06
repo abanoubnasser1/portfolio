@@ -23,9 +23,7 @@ export default function Navbar() {
         <a href="#contact" className="transition hover:text-white">
           CONTACT
         </a>
-        <a href="/blog" className="transition hover:text-white">
-          BLOG
-        </a>
+       
 
       </nav>
     </header>
