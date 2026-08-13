@@ -1,0 +1,367 @@
+export type FieldType = "short_text" | "long_text" | "single_choice" | "multi_choice";
+
+export interface FieldOption {
+  value: string;
+  labelEn: string;
+  labelAr?: string;
+}
+
+export interface QuestionnaireField {
+  id: string;
+  labelEn: string;
+  labelAr?: string;
+  helperEn?: string;
+  type: FieldType;
+  required?: boolean;
+  options?: FieldOption[];
+  hasOther?: boolean;
+}
+
+export interface QuestionnaireSection {
+  title: string;
+  description?: string;
+  fields: QuestionnaireField[];
+}
+
+export const questionnaireSections: QuestionnaireSection[] = [
+  {
+    title: "Business Overview",
+    fields: [
+      {
+        id: "primary_goal",
+        labelEn: "What is the primary goal of launching this business?",
+        labelAr: "ما الهدف الرئيسي من إطلاق هذا المشروع؟",
+        type: "multi_choice",
+        hasOther: true,
+        options: [
+          { value: "revenue", labelEn: "Generate revenue" },
+          { value: "long_term_brand", labelEn: "Build a long-term brand" },
+          { value: "test_idea", labelEn: "Test a new business idea" },
+          { value: "educational", labelEn: "Create educational value" },
+        ],
+      },
+      {
+        id: "business_summary",
+        labelEn: "How would you describe your business in one sentence?",
+        labelAr: "كيف تصف مشروعك في جملة واحدة؟",
+        type: "long_text",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Product",
+    fields: [
+      {
+        id: "product_format",
+        labelEn: "Which formats will be available?",
+        labelAr: "ما نوع المنتج؟",
+        type: "single_choice",
+        options: [
+          { value: "printed", labelEn: "Printed Book" },
+          { value: "digital", labelEn: "Digital Book (PDF)" },
+          { value: "both", labelEn: "Both" },
+        ],
+      },
+      {
+        id: "customization",
+        labelEn: "Which customization options will customers have?",
+        labelAr: "ما البيانات التي يمكن للعميل تخصيصها؟",
+        type: "multi_choice",
+        hasOther: true,
+        options: [
+          { value: "name", labelEn: "Child's Name" },
+          { value: "photo", labelEn: "Child's Photo" },
+          { value: "age", labelEn: "Age" },
+          { value: "gender", labelEn: "Gender" },
+          { value: "appearance", labelEn: "Appearance" },
+          { value: "favorite_color", labelEn: "Favorite Color" },
+          { value: "favorite_animal", labelEn: "Favorite Animal" },
+          { value: "family_members", labelEn: "Family Members" },
+          { value: "friends", labelEn: "Friends" },
+        ],
+      },
+      {
+        id: "illustration_style",
+        labelEn: "Which illustration styles will be available?",
+        labelAr: "ما أنماط الرسومات المتاحة؟",
+        type: "multi_choice",
+        options: [
+          { value: "cartoon", labelEn: "Cartoon" },
+          { value: "watercolor", labelEn: "Watercolor" },
+          { value: "storybook", labelEn: "Storybook Illustration" },
+          { value: "anime", labelEn: "Anime" },
+          { value: "realistic", labelEn: "Realistic" },
+          { value: "multiple", labelEn: "Multiple Styles" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Target Audience",
+    fields: [
+      {
+        id: "primary_customer",
+        labelEn: "Who is your primary customer?",
+        labelAr: "من هو العميل الأساسي؟",
+        type: "multi_choice",
+        hasOther: true,
+        options: [
+          { value: "mother", labelEn: "Mother" },
+          { value: "father", labelEn: "Father" },
+          { value: "grandparents", labelEn: "Grandparents" },
+          { value: "relatives", labelEn: "Relatives" },
+          { value: "friends", labelEn: "Friends" },
+          { value: "schools", labelEn: "Schools" },
+          { value: "nurseries", labelEn: "Nurseries" },
+        ],
+      },
+      {
+        id: "child_age_range",
+        labelEn: "Child age range",
+        labelAr: "الفئة العمرية للأطفال",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "0-2", labelEn: "0–2" },
+          { value: "3-5", labelEn: "3–5" },
+          { value: "6-8", labelEn: "6–8" },
+          { value: "9-12", labelEn: "9–12" },
+        ],
+      },
+      {
+        id: "initial_market",
+        labelEn: "Initial target market",
+        labelAr: "السوق المستهدف في البداية",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "saudi", labelEn: "Saudi Arabia" },
+          { value: "uae", labelEn: "UAE" },
+          { value: "egypt", labelEn: "Egypt" },
+          { value: "gcc", labelEn: "GCC" },
+          { value: "usa", labelEn: "USA" },
+          { value: "europe", labelEn: "Europe" },
+          { value: "global", labelEn: "Global" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Customer Motivation",
+    fields: [
+      {
+        id: "purchase_reason",
+        labelEn: "Why would customers buy this product?",
+        labelAr: "لماذا سيشتري العميل هذا المنتج؟",
+        type: "multi_choice",
+        hasOther: true,
+        options: [
+          { value: "birthday", labelEn: "Birthday Gift" },
+          { value: "educational", labelEn: "Educational Purpose" },
+          { value: "bedtime", labelEn: "Bedtime Story" },
+          { value: "keepsake", labelEn: "Keepsake Memory" },
+          { value: "personalized_gift", labelEn: "Personalized Gift" },
+          { value: "entertainment", labelEn: "Entertainment" },
+        ],
+      },
+      {
+        id: "biggest_value",
+        labelEn: "What is the biggest value customers receive?",
+        labelAr: "ما أهم قيمة يحصل عليها العميل؟",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "emotional", labelEn: "Emotional Connection" },
+          { value: "engagement", labelEn: "Child Engagement" },
+          { value: "learning", labelEn: "Learning" },
+          { value: "unique_gift", labelEn: "Unique Gift" },
+          { value: "premium", labelEn: "Premium Experience" },
+          { value: "memory", labelEn: "Family Memory" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Brand",
+    fields: [
+      {
+        id: "brand_words",
+        labelEn: "Choose three words that describe your brand.",
+        labelAr: "اختر ثلاث كلمات تصف علامتك التجارية.",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "friendly", labelEn: "Friendly" },
+          { value: "creative", labelEn: "Creative" },
+          { value: "magical", labelEn: "Magical" },
+          { value: "educational", labelEn: "Educational" },
+          { value: "premium", labelEn: "Premium" },
+          { value: "innovative", labelEn: "Innovative" },
+          { value: "warm", labelEn: "Warm" },
+          { value: "trustworthy", labelEn: "Trustworthy" },
+          { value: "fun", labelEn: "Fun" },
+          { value: "inspirational", labelEn: "Inspirational" },
+        ],
+      },
+      {
+        id: "customer_emotions",
+        labelEn: "Which emotions should customers feel?",
+        labelAr: "ما المشاعر التي تريد أن يشعر بها العميل؟",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "happiness", labelEn: "Happiness" },
+          { value: "excitement", labelEn: "Excitement" },
+          { value: "nostalgia", labelEn: "Nostalgia" },
+          { value: "love", labelEn: "Love" },
+          { value: "surprise", labelEn: "Surprise" },
+          { value: "pride", labelEn: "Pride" },
+          { value: "inspiration", labelEn: "Inspiration" },
+          { value: "wonder", labelEn: "Wonder" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Competitors",
+    fields: [
+      {
+        id: "competitors_list",
+        labelEn: "Who are your competitors?",
+        type: "long_text",
+      },
+      {
+        id: "competitors_admire",
+        labelEn: "What do you admire about them?",
+        type: "multi_choice",
+        hasOther: true,
+        options: [
+          { value: "product_quality", labelEn: "Product Quality" },
+          { value: "branding", labelEn: "Branding" },
+          { value: "marketing", labelEn: "Marketing" },
+          { value: "website", labelEn: "Website" },
+          { value: "ux", labelEn: "User Experience" },
+          { value: "pricing", labelEn: "Pricing" },
+        ],
+      },
+      {
+        id: "outperform_where",
+        labelEn: "Where do you believe you can outperform them?",
+        type: "long_text",
+      },
+    ],
+  },
+  {
+    title: "Marketing Goals",
+    fields: [
+      {
+        id: "priorities_6months",
+        labelEn: "What are your priorities during the first 6 months?",
+        labelAr: "ما أولوياتك خلال أول 6 أشهر؟",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "brand_awareness", labelEn: "Brand Awareness" },
+          { value: "sales", labelEn: "Sales" },
+          { value: "traffic", labelEn: "Website Traffic" },
+          { value: "community", labelEn: "Community Building" },
+          { value: "email_list", labelEn: "Email List" },
+          { value: "partnerships", labelEn: "Partnerships" },
+          { value: "investors", labelEn: "Investors" },
+        ],
+      },
+      {
+        id: "marketing_channels",
+        labelEn: "Which marketing channels will you focus on?",
+        labelAr: "ما القنوات التسويقية المستهدفة؟",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "instagram", labelEn: "Instagram" },
+          { value: "tiktok", labelEn: "TikTok" },
+          { value: "facebook", labelEn: "Facebook" },
+          { value: "snapchat", labelEn: "Snapchat" },
+          { value: "pinterest", labelEn: "Pinterest" },
+          { value: "google_ads", labelEn: "Google Ads" },
+          { value: "seo", labelEn: "SEO" },
+          { value: "email", labelEn: "Email Marketing" },
+          { value: "influencers", labelEn: "Influencers" },
+          { value: "pr", labelEn: "PR" },
+        ],
+      },
+      {
+        id: "marketing_budget",
+        labelEn: "Monthly marketing budget",
+        labelAr: "الميزانية الشهرية للتسويق",
+        type: "single_choice",
+                hasOther: true,
+
+        options: [
+          { value: "under_500", labelEn: "Under $500" },
+          { value: "500_1000", labelEn: "$500–1,000" },
+          { value: "1000_3000", labelEn: "$1,000–3,000" },
+          { value: "3000_plus", labelEn: "$3,000+" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Success Metrics",
+    fields: [
+      {
+        id: "key_kpis",
+        labelEn: "Which KPIs matter most?",
+        labelAr: "ما أهم مؤشرات النجاح؟",
+        type: "multi_choice",
+                hasOther: true,
+
+        options: [
+          { value: "sales", labelEn: "Sales" },
+          { value: "revenue", labelEn: "Revenue" },
+          { value: "conversion_rate", labelEn: "Conversion Rate" },
+          { value: "cac", labelEn: "CAC" },
+          { value: "roas", labelEn: "ROAS" },
+          { value: "website_visitors", labelEn: "Website Visitors" },
+          { value: "social_growth", labelEn: "Social Growth" },
+          { value: "repeat_purchases", labelEn: "Repeat Purchases" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Future Vision",
+    fields: [
+      {
+        id: "future_products",
+        labelEn: "Which future products are planned?",
+        labelAr: "ما المنتجات المخطط إطلاقها مستقبلًا؟",
+        type: "multi_choice",
+        hasOther: true,
+        options: [
+          { value: "educational_books", labelEn: "Educational Books" },
+          { value: "coloring_books", labelEn: "Coloring Books" },
+          { value: "audio_books", labelEn: "Audio Books" },
+          { value: "mobile_app", labelEn: "Mobile App" },
+          { value: "subscription", labelEn: "Subscription" },
+          { value: "toys", labelEn: "Toys" },
+          { value: "merchandise", labelEn: "Merchandise" },
+        ],
+      },
+      {
+        id: "recommendation_sentence",
+        labelEn:
+          "If a customer recommended your brand to a friend, what would you want them to say?",
+        labelAr: "إذا أوصى أحد العملاء بعلامتك التجارية لصديق، فما الجملة التي تتمنى أن يقولها؟",
+        type: "long_text",
+      },
+    ],
+  },
+];
