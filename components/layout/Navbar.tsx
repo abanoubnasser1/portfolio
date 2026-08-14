@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
   { href: "#work", label: "WORK" },
-  { href: "/blog", label: "BLOG" },
   { href: "#about", label: "ABOUT" },
   { href: "#contact", label: "CONTACT" },
+  { href: "/blog", label: "BLOG" }
 ];
 
 export default function Navbar() {

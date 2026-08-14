@@ -15,8 +15,8 @@ export default function About() {
       <div className="scroll-section w-full">
         <div className="scroll-content">
           <Container>
-            <div className="grid grid-cols-12 gap-8 md:gap-10">
-              <div className="col-span-12 lg:col-span-2">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+                <div className="col-span-12 lg:col-span-2">
                 <p className="text-xs uppercase tracking-[0.4em] text-zinc-500">
                   About
                 </p>
