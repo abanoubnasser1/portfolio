@@ -9,6 +9,7 @@
 
 @theme inline {
     --font-syne: var(--font-syne);
+    --font-arabic: var(--font-arabic);
 }
 @keyframes marquee {
     from {

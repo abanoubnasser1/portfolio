@@ -29,7 +29,7 @@ function Field({
       {field.labelEn}
       {field.required && <span className="ml-1 text-red-400">*</span>}
       {field.labelAr && (
-        <span className="mt-1 block text-xs font-medium text-zinc-500" dir="rtl">
+      <span className="font-arabic mt-1 block text-xs font-medium text-zinc-500" dir="rtl">
           {field.labelAr}
         </span>
       )}

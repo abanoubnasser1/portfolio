@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { geist, syne } from "./fonts";
+import { geist, syne, ibmPlexArabic } from "./fonts";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import AnimationProvider from "@/components/providers/AnimationProvider";
 import ScrollProvider from "@/components/providers/ScrollProvider";
@@ -87,8 +87,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${syne.variable} scroll-smooth`}>
-      <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
+<html
+  lang="en"
+  className={`${geist.variable} ${syne.variable} ${ibmPlexArabic.variable} scroll-smooth`}>
+       <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
         <GoogleAnalytics />
         <PersonSchema />
         <SpeedInsights/>
