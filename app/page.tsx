@@ -6,6 +6,11 @@ import About from "@/components/about/About";
 import Contact from "@/components/contact/Contact";
 import LogoMarquee from "@/components/clients/LogoMarquee";
 import Testimonials from "@/components/testimonials/Testimonials";
+import Footer from "@/components/layout/Footer";
+import Services from "@/components/services/Services";
+import StackingProcess from "@/components/process/StackingProcess";
+
+
 
 
 export default function Home() {
@@ -15,6 +20,8 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <Navbar />
       <About />
+      <Services />
+
            <section id="about" className="font-syne font-semibold mx-auto w-full flex justify-center max-w-[1700px] py-20 md:px-30">
         <ScrollBlurText
           start="start 0.8"
@@ -24,17 +31,13 @@ export default function Home() {
         />
       </section>
       <Projects />
+      <StackingProcess />
       <Testimonials />
       <LogoMarquee />
       <Contact />
+      <Footer />
 
-      <section id="back to top" className="mx-auto text-center w-full flex justify-center max-w-[1700px] py-30 ">
-              <div className="text-[10px] font-semibold uppercase tracking-[0.25em]">
-         <a href="#" className="transition hover:text-white">
-          Thanks for visiting <br/> Back to top ↑
-         </a>
-        </div>
-        </section>
+     
     </main>
   );
 }
