@@ -88,10 +88,22 @@ export default async function ProjectPage({
           href={project.behanceHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-10 inline-block rounded-full border border-white/10 px-6 py-3 text-sm uppercase tracking-widest text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+                className="mt-10  inline-block rounded-full border border-white/10 bg-white px-6 py-3 text-sm uppercase tracking-widest text-black transition-opacity hover:opacity-90"
+
         >
           View Full Case on Behance ↗
         </Link>
+        
+
+
+        {project.guidelineSlug && (
+        <Link
+        href={`/guidelines/${project.guidelineSlug}`}
+          className="mt-10 ml-4 inline-block rounded-full border border-white/10 px-6 py-3 text-sm uppercase tracking-widest text-zinc-300 transition-colors hover:border-white/30 hover:text-white"
+        >
+        View Brand Guidelines
+        </Link>
+)}
 
        
 

@@ -6,6 +6,8 @@ export interface Project {
   image: string;
   description: string;
   gallery?: string[]; // صور إضافية
+  guidelineSlug?: string; 
+
 }
 
 export const projects: Project[] = [
@@ -34,6 +36,8 @@ export const projects: Project[] = [
     "/projects/sultan/sultan (13).jpg",
 
   ],
+    guidelineSlug: "al-sultan-omar", 
+
     },
   {
     slug: "Q-West",
@@ -82,6 +86,8 @@ export const projects: Project[] = [
     "/projects/pas/pas 12.jpg",
     "/projects/pas/pas 13.jpg",
   ],
+      guidelineSlug: "PAS-Architect", 
+
   },
   {
     slug: "Corelink-technologies",
