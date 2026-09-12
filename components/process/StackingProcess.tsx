@@ -3,27 +3,27 @@
 const steps = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Brief & Discovery",
     description:
-      "We start with a deep conversation about your business, audience, and goals — through the kick-off questionnaire and a direct call.",
+      "We start with a deep conversation about your business, audience, and goals, through a kick-off questionnaire and a series of meetings.",
   },
   {
     number: "02",
-    title: "Concept",
+    title: "Concept Development",
     description:
       "I explore directions and present a strong initial concept grounded in your brand's personality and market position.",
   },
   {
     number: "03",
-    title: "Refinement",
+    title: "Refinement based on Feedback",
     description:
-      "We refine the chosen direction together until every detail feels right — colors, typography, and every touchpoint.",
+      "We refine the chosen direction together until every detail feels right.",
   },
   {
     number: "04",
-    title: "Delivery",
+    title: "Delivery & Guidelines",
     description:
-      "You receive a complete, organized brand system ready to use across every platform, with full guidelines.",
+      "You receive a complete, organized brand system ready to use across every platform.",
   },
 ];
 

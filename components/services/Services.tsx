@@ -21,7 +21,7 @@ const services = [
 
 export default function Services() {
   return (
-    <Section center={false} className="border-t border-zinc-800 py-24 md:py-32">
+    <Section center={false} className="border-t border-zinc-800 py-24 md:py-20">
       <Container>
         <p className="mb-10 text-xs uppercase tracking-[0.4em] text-zinc-500 md:mb-16">
           What I Do

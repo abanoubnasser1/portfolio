@@ -20,7 +20,6 @@ export default function Home() {
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <Navbar />
       <About />
-      <Services />
 
            <section id="about" className="font-syne font-semibold mx-auto w-full flex justify-center max-w-[1700px] py-20 md:px-30">
         <ScrollBlurText
