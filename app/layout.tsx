@@ -12,6 +12,7 @@ import PersonSchema from "@/components/seo/PersonSchema";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import MotionProvider from "@/components/providers/MotionProvider";
 
 
 
@@ -90,6 +91,7 @@ export default function RootLayout({
 <html
   lang="en"
   className={`${geist.variable} ${syne.variable} ${ibmPlexArabic.variable} scroll-smooth`}>
+    <MotionProvider>
        <body className="bg-[#090909] text-white antialiased overflow-x-hidden">
         <GoogleAnalytics />
         <PersonSchema />
@@ -106,6 +108,7 @@ export default function RootLayout({
         </PageTransition>
          <Analytics />
       </body>
+      </MotionProvider>
     </html>
   );
 }

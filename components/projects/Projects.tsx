@@ -17,6 +17,7 @@ function shuffle<T>(array: T[]): T[] {
 
 export default function Projects() {
   const [orderedProjects, setOrderedProjects] = useState(allProjects);
+  
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {

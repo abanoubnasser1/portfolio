@@ -2,8 +2,15 @@
 
 import { useState } from "react";
 
+type Status = "idle" | "loading" | "success" | "error";
+
+const labelClass = "mb-2 block text-xs uppercase tracking-widest text-tertiary";
+const fieldClass =
+  "w-full min-w-0 border border-control bg-transparent px-5 py-2.5 text-sm text-white placeholder:text-tertiary outline-none transition-colors focus-visible:border-white focus-visible:ring-1 focus-visible:ring-white sm:px-6 sm:py-3";
+
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
+  const [emailError, setEmailError] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -30,50 +37,91 @@ export default function ContactForm() {
     }
   }
 
+  const message =
+    status === "success"
+      ? "Message sent. Thank you, I'll get back to you soon."
+      : status === "error"
+        ? "Your message didn't send. Check your connection and try again, or email contact@abanoubnasser.com."
+        : "";
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-8 flex w-full min-w-0 max-w-2xl flex-col gap-3 sm:mt-10 sm:gap-4"
+      className="mt-8 flex w-full min-w-0 max-w-2xl flex-col gap-4 sm:mt-10"
     >
-      <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:gap-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your name"
-          required
-          className="w-full min-w-0 rounded-full border border-white/10 bg-transparent px-5 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30 sm:px-6 sm:py-3"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email"
-          required
-          className="w-full min-w-0 rounded-full border border-white/10 bg-transparent px-5 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30 sm:px-6 sm:py-3"
-        />
+      <div className="flex w-full min-w-0 flex-col gap-4 sm:flex-row">
+        <div className="min-w-0 flex-1">
+          <label htmlFor="contact-name" className={labelClass}>Name</label>
+          <input
+            id="contact-name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            required
+            placeholder="Your name"
+            className={`${fieldClass} rounded-full`}
+          />
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <label htmlFor="contact-email" className={labelClass}>Email</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            required
+            placeholder="name@company.com"
+            aria-invalid={!!emailError}
+            aria-describedby={emailError ? "contact-email-error" : undefined}
+            onBlur={(e) => {
+              const input = e.currentTarget;
+              setEmailError(
+                input.value && !input.validity.valid
+                  ? "Enter an email like name@company.com."
+                  : ""
+              );
+            }}
+            onChange={() => emailError && setEmailError("")}
+            className={`${fieldClass} rounded-full`}
+          />
+          {emailError && (
+            <p id="contact-email-error" className="mt-2 text-xs text-red-400">
+              {emailError}
+            </p>
+          )}
+        </div>
       </div>
 
-      <textarea
-        name="message"
-        placeholder="Tell me about your project"
-        required
-        rows={4}
-        className="w-full min-w-0 resize-none rounded-2xl border border-white/10 bg-transparent px-5 py-3 text-sm text-white placeholder:text-zinc-500 outline-none transition-colors focus:border-white/30 sm:px-6 sm:py-4"
-      />
+      <div>
+        <label htmlFor="contact-message" className={labelClass}>Message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          required
+          rows={4}
+          placeholder="Tell me about your project"
+          className={`${fieldClass} resize-none rounded-2xl py-3 sm:py-4`}
+        />
+      </div>
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-1 inline-block w-fit rounded-full border border-white/10 bg-white px-6 py-2.5 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50 sm:mt-2 sm:px-8 sm:py-3 sm:text-sm"
+        aria-busy={status === "loading"}
+        className="inline-block min-h-11 w-fit rounded-full border border-white/10 bg-white px-6 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50 sm:px-8 sm:text-sm"
       >
-        {status === "loading" ? "Sending..." : "Send Message"}
+        {status === "loading" ? "Sending…" : "Send Message"}
       </button>
 
-      {status === "success" && (
-        <p className="text-sm text-green-400">Thanks! Your message has been sent.</p>
-      )}
-      {status === "error" && (
-        <p className="text-sm text-red-400">Something went wrong. Please try again or email me directly.</p>
-      )}
+      <p
+        role="status"
+        aria-live="polite"
+        className={`min-h-5 text-sm ${status === "error" ? "text-red-400" : "text-green-400"}`}
+      >
+        {message}
+      </p>
     </form>
   );
 }
